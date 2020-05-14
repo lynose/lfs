@@ -1,0 +1,2 @@
+# lfs
+Linux from scratch
