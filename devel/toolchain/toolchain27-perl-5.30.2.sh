@@ -3,9 +3,7 @@ if test -d $LFS/sources/perl-5.30.2
  then
   rm -rf $LFS/sources/perl-5.30.2
 fi
-
 tar -xJf $LFS/sources/perl-5.30.2.tar.xz -C $LFS/sources/ &&
-
 cd $LFS/sources/perl-5.30.2 &&
 
 

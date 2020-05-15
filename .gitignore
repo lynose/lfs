@@ -1,2 +1,3 @@
 *.sh~
 a.out
+.kdev4/

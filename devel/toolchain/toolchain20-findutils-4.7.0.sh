@@ -3,7 +3,7 @@ if test -d $LFS/sources/findutils-4.7.0
  then
   rm -rf $LFS/sources/findutils-4.7.0
 fi
-tar -xzf $LFS/sources/findutils-4.7.0.tar.gz -C $LFS/sources/ &&
+tar -xJf $LFS/sources/findutils-4.7.0.tar.xz -C $LFS/sources/ &&
 cd $LFS/sources/findutils-4.7.0 &&
 
 ./configure --prefix=/tools &&
