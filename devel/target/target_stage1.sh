@@ -1,0 +1,31 @@
+./target02_linux-header-5.6.11.sh &&
+./target03_man-pages-5.06.sh &&
+./target04_glibc-2.31.sh &&
+./target05_adjust_toolchain.sh &&
+./target06_zlib-1.2.11.sh &&
+./target07_bzip2-1.0.8.sh &&
+./target08_xz-5.2.5.sh &&
+./target09_file-5.38.sh &&
+./target10_readline-8.0.sh &&
+./target11_m4-1.4.18.sh &&
+./target12_bc-2.7.2.sh &&
+./target13_binutils-2.34.sh &&
+./target14_gmp-6.2.0.sh &&
+./target15_mpfr-4.0.2.sh &&
+./target16_mpc-1.1.0.sh &&
+./target17_attr-2.4.48.sh &&
+./target18_acl-2.2.53.sh &&
+./target19_libcap-2.34.sh &&
+./target20_shadow-4.8.1.sh &&
+./target21_gcc-10.1.0.sh &&
+./target22_pkg-config-0.29.2.sh &&
+./target23_ncurses-6.2.sh &&
+./target24_sed-4.8.sh &&
+./target25_psmisc-23.3.sh &&
+./target26_iana-etc-20200429.sh &&
+./target27_gettext-0.20.2.sh &&
+./target28_bison-3.6.sh &&
+./target29_flex-2.6.4.sh &&
+./target30_grep-3.4.sh &&
+./target31_bash-5.0.sh
+echo "If you see this before logout, execute: exec /bin/bash --login +h"

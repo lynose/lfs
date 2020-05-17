@@ -13,20 +13,21 @@ if test -d $LFS/sh
   rm -rf $LFS/sh
 fi
 
-if [ ! -f /sources ]
+if [ ! -d /sources ]
   then
     mkdir -v $LFS/tools
 fi
-#cp -R ../sources $LFS
+
+cp -R ../sources $LFS
 
 cp -R ../sh $LFS
 
-if [ ! -f /sources ]
+if [ ! -h /tools ]
   then
     ln -sv $LFS/tools /
 fi
 
-if [ ! -f /sources ]
+if [ ! -h /sources ]
  then
     ln -sv $LFS/sources /
 fi

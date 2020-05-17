@@ -1,20 +1,20 @@
 #!/bin/bash
 chown -R root:root $LFS/tools &&
-mkdir -v $LFS/{dev,proc,sys} &&
+
+mkdir -pv $LFS/{dev,proc,sys,run} &&
+
 mknod -m 600 $LFS/dev/console c 5 1 &&
 mknod -m 666 $LFS/dev/null c 1 3 &&
+
 mount -v --bind /dev $LFS/dev &&
+
 mount -vt devpts devpts $LFS/dev/pts &&
 mount -vt proc proc $LFS/proc &&
 mount -vt sysfs sysfs $LFS/sys &&
+mount -vt tmpfs tmpfs $LFS/run &&
 
 if [ -h $LFS/dev/shm ]; then
-  link=$(readlink $LFS/dev/shm)
-  mkdir -p $LFS/$link
-  mount -vt tmpfs shm $LFS/$link
-  unset link
-else
-  mount -vt tmpfs shm $LFS/dev/shm
+  mkdir -pv $LFS/$(readlink $LFS/dev/shm)
 fi
 
 chroot "$LFS" /tools/bin/env -i \

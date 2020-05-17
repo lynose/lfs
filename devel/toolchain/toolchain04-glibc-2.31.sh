@@ -19,5 +19,5 @@ cd ../glibc-build &&
       --build=$(../scripts/config.guess) \
       --enable-kernel=3.2                \
       --with-headers=/tools/include &&
-make -j1 &&
+make &&
 make install

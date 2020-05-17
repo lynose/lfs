@@ -1,11 +1,10 @@
-ccat > ~/.bash_profile << "EOF"
+cat > ~/.bash_profile << "EOF"
 exec env -i HOME=$HOME TERM=$TERM PS1='\u:\w\$ ' /bin/bash
 EOF
 
 cat > ~/.bashrc << "EOF"
 set +h
 umask 022
-LFS=/lfs
 LC_ALL=POSIX
 LFS_TGT=$(uname -m)-lfs-linux-gnu
 PATH=/tools/bin:/bin:/usr/bin
