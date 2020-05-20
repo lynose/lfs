@@ -1,4 +1,4 @@
-./target02_linux-header-5.6.11.sh &&
+./target02_linux-header-5.6.13.sh &&
 ./target03_man-pages-5.06.sh &&
 ./target04_glibc-2.31.sh &&
 ./target05_adjust_toolchain.sh &&
@@ -24,7 +24,7 @@
 ./target25_psmisc-23.3.sh &&
 ./target26_iana-etc-20200429.sh &&
 ./target27_gettext-0.20.2.sh &&
-./target28_bison-3.6.sh &&
+./target28_bison-3.6.1.sh &&
 ./target29_flex-2.6.4.sh &&
 ./target30_grep-3.4.sh &&
 ./target31_bash-5.0.sh

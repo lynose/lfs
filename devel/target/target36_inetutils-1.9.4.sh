@@ -16,7 +16,7 @@ cd /sources/inetutils-1.9.4 &&
             --disable-rsh        \
             --disable-servers &&
 make &&
-make check &&
+make check -j1 &&
 make install &&
 mv -v /usr/bin/{hostname,ping,ping6,traceroute} /bin &&
 mv -v /usr/bin/ifconfig /sbin

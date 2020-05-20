@@ -10,4 +10,4 @@
     
 rm -rf /tmp/*
 
-logout
+

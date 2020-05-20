@@ -12,9 +12,9 @@
 ./target43_libelf-0.179.sh &&
 ./target44_libffi-3.3.sh &&
 ./target45_openssl-1.1.1g.sh &&
-./target46_python-3.8.2.sh &&
+./target46_python-3.8.3.sh &&
 ./target47_ninja-1.10.0.sh &&
-./target48-meson-0.54.1.sh &&
+./target48-meson-0.54.2.sh &&
 ./target49_coreutils-8.32.sh &&
 ./target50_check-0.14.0.sh &&
 ./target51_diffutils-3.7.sh &&
