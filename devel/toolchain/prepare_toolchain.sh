@@ -1,15 +1,15 @@
 #!/bin/bash
 
-if [ ! -d $LFS/sources ]
+if [ ! -d ../sources ]
  then
-  mkdir -v $LFS/sources
-  chmod -v a+wt $LFS/sources
+  mkdir -v ../sources
+  chmod -v a+wt ../sources
 fi
 
-wget --input-file=../wget-list --continue --directory-prefix=$LFS/sources
+wget --input-file=../wget-list --continue --directory-prefix=../sources
 
-cp ../md5sums $LFS/sources
+cp ../md5sums ../sources
 
-pushd $LFS/sources
+pushd ../sources
 md5sum -c md5sums
 popd
