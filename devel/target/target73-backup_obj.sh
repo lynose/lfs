@@ -1,4 +1,5 @@
 #!/bin/bash
+${log} `basename "$0"` " started" target &&
 save_lib="ld-2.31.so libc-2.31.so libpthread-2.31.so libthread_db-1.0.so"
 
 cd /lib
@@ -20,6 +21,7 @@ for LIB in $save_usrlib; do
     objcopy --add-gnu-debuglink=$LIB.dbg $LIB
 done
 
-unset LIB save_lib save_usrlib
+unset LIB save_lib save_usrlib &&
+${log} `basename "$0"` " finished" target 
 
-exec /tools/bin/bash
+exec /tools/bin/bash 

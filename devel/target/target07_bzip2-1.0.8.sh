@@ -1,4 +1,5 @@
 #!/bin/bash
+${log} `basename "$0"` " started" target &&
 if test -d /sources/bzip2-1.0.8
  then
   rm -rf /sources/bzip2-1.0.8
@@ -13,15 +14,19 @@ sed -i 's@\(ln -s -f \)$(PREFIX)/bin/@\1@' Makefile &&
 sed -i "s@(PREFIX)/man@(PREFIX)/share/man@g" Makefile &&
 
 make -f Makefile-libbz2_so &&
+${log} `basename "$0"` " built dynamic" target &&
 make clean &&
+${log} `basename "$0"` " cleaned" target &&
 
 make &&
+${log} `basename "$0"` " built static" target &&
 
 make PREFIX=/usr install &&
-
 cp -v bzip2-shared /bin/bzip2 &&
 cp -av libbz2.so* /lib &&
 ln -sv ../../lib/libbz2.so.1.0 /usr/lib/libbz2.so &&
 rm -v /usr/bin/{bunzip2,bzcat,bzip2} &&
 ln -sv bzip2 /bin/bunzip2 &&
-ln -sv bzip2 /bin/bzcat
+ln -sv bzip2 /bin/bzcat &&
+${log} `basename "$0"` " installed" target &&
+${log} `basename "$0"` " finished" target 

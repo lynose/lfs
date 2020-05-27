@@ -1,4 +1,7 @@
 #!/bin/bash
+${log} `basename "$0"` " started" toolchain &&
+
+
 if test -d $LFS/sources/binutils-2.34
  then
   rm -rf $LFS/sources/binutils-2.34
@@ -20,12 +23,16 @@ cd ../binutils-build &&
     --with-lib-path=/tools/lib \
     --target=$LFS_TGT          \
     --disable-nls              \
-    --disable-werror
-    
+    --disable-werror        &&
+${log} `basename "$0"` " configured" toolchain &&
+
 make &&
+${log} `basename "$0"` " build" toolchain &&
 
 case $(uname -m) in
   x86_64) mkdir -v /tools/lib && ln -sv lib /tools/lib64 ;;
 esac
 
-make install
+make install &&
+${log} `basename "$0"` " installed" toolchain &&
+${log} `basename "$0"` " finished" toolchain

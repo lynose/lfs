@@ -1,4 +1,6 @@
 #!/bin/bash
+${log} `basename "$0"` " started" toolchain &&
+
 if test -d $LFS/sources/gcc-10.1.0
  then
   rm -rf $LFS/sources/gcc-10.1.0
@@ -58,7 +60,12 @@ RANLIB=$LFS_TGT-ranlib                             \
     --disable-multilib                             \
     --disable-bootstrap                            \
     --disable-libgomp &&
+${log} `basename "$0"` " configured" toolchain &&
 
 make &&
+${log} `basename "$0"` " build" toolchain &&
 make install &&
-ln -sv gcc /tools/bin/cc
+ln -sv gcc /tools/bin/cc &&
+${log} `basename "$0"` " installed" toolchain &&
+${log} `basename "$0"` " finished" toolchain
+

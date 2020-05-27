@@ -1,4 +1,5 @@
 #!/bin/bash
+${log} `basename "$0"` " started" target &&
 mv -v /tools/bin/{ld,ld-old} &&
 mv -v /tools/$(uname -m)-pc-linux-gnu/bin/{ld,ld-old} &&
 mv -v /tools/bin/{ld-new,ld} &&
@@ -32,4 +33,5 @@ grep found dummy.log &&
 sleep 10 &&
 
 rm -v dummy.c a.out dummy.log &&
-cd /sh
+cd /sh &&
+${log} `basename "$0"` " finished" target 

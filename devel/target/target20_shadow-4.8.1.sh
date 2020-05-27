@@ -1,4 +1,5 @@
 #!/bin/bash
+${log} `basename "$0"` " started" target &&
 if test -d /sources/shadow-4.8.1
  then
   rm -rf /sources/shadow-4.8.1
@@ -20,14 +21,17 @@ sed -i 's/1000/999/' etc/useradd &&
 
 touch /usr/bin/passwd &&
 ./configure --sysconfdir=/etc --with-group-name-max-length=32 &&
+${log} `basename "$0"` " configured" target &&
 
 
 make &&
+${log} `basename "$0"` " built" target &&
 
 make install &&
-
+${log} `basename "$0"` " installed" target &&
 pwconv &&
 
 grpconv &&
 
 passwd root
+${log} `basename "$0"` " finished" target 

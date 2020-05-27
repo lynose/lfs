@@ -1,4 +1,6 @@
 #!/bin/bash
+${log} `basename "$0"` " started" toolchain &&
+
 if test -d $LFS/sources/util-linux-2.35.1
  then
   rm -rf $LFS/sources/util-linux-2.35.1
@@ -12,5 +14,11 @@ cd $LFS/sources/util-linux-2.35.1 &&
             --without-systemdsystemunitdir \
             --without-ncurses              \
             PKG_CONFIG=""   &&
+${log} `basename "$0"` " configured" toolchain &&
+
 make &&
-make install
+${log} `basename "$0"` " build" toolchain &&
+
+make install &&
+${log} `basename "$0"` " installed" toolchain &&
+${log} `basename "$0"` " finished" toolchain

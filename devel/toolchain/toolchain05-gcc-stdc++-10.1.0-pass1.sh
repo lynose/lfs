@@ -1,4 +1,6 @@
 #!/bin/bash
+${log} `basename "$0"` " started" toolchain &&
+
 if test -d $LFS/sources/gcc-10.1.0
  then
   rm -rf $LFS/sources/gcc-10.1.0
@@ -22,7 +24,11 @@ cd ../gcc-libstdc++-v3-build &&
     --disable-nls                   \
     --disable-libstdcxx-pch         \
     --with-gxx-include-dir=/tools/$LFS_TGT/include/c++/10.1.0 &&
+${log} `basename "$0"` " configured" toolchain &&
 
 make &&
-make install
+${log} `basename "$0"` " build" toolchain &&
 
+make install &&
+${log} `basename "$0"` " installed" toolchain &&
+${log} `basename "$0"` " finished" toolchain

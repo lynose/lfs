@@ -1,4 +1,6 @@
 #!/bin/bash
+${log} `basename "$0"` " started" target &&
+
 if test -d /sources/binutils-2.34
  then
   rm -rf /sources/binutils-2.34
@@ -27,10 +29,14 @@ cd ../binutils-build &&
              --disable-werror    \
              --enable-64-bit-bfd \
              --with-system-zlib &&
+${log} `basename "$0"` " configured" target &&
 
 make tooldir=/usr &&
+${log} `basename "$0"` " built" target &&
 
-make -k check
+make -k check &&
+${log} `basename "$0"` " Unexpeced check succeeds" target
 
-make tooldir=/usr install
-
+make tooldir=/usr install &&
+${log} `basename "$0"` " installed" target &&
+${log} `basename "$0"` " finished" target 

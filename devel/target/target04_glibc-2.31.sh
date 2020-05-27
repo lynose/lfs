@@ -1,4 +1,6 @@
 #!/bin/bash
+${log} `basename "$0"` " started" target &&
+
 if test -d /sources/glibc-2.31
  then
   rm -rf /sources/glibc-2.31
@@ -31,19 +33,23 @@ CC="gcc -ffile-prefix-map=/tools=/usr"              \
              --enable-stack-protector=strong        \
              --with-headers=/usr/include            \
              libc_cv_slibdir=/lib &&
+${log} `basename "$0"` " configured" target &&
 
 make &&
-
+${log} `basename "$0"` " built" target &&
 
 case $(uname -m) in
   i?86)   ln -sfnv $PWD/elf/ld-linux.so.2        /lib ;;
   x86_64) ln -sfnv $PWD/elf/ld-linux-x86-64.so.2 /lib ;;
 esac
-make check          #Ignoring result
+make check &&          #Ignoring result, not related to multithread
+${log} `basename "$0"` " Unexpected Test succeeded" target
+${log} `basename "$0"` " expected test fail?" target
 
 touch /etc/ld.so.conf &&
 sed '/test-installation/s@$(PERL)@echo not running@' -i ./Makefile &&
 make install &&
+${log} `basename "$0"` " installed base" target &&
 
 cp -v ../nscd/nscd.conf /etc/nscd.conf &&
 mkdir -pv /var/cache/nscd &&
@@ -129,4 +135,6 @@ cat >> /etc/ld.so.conf << "EOF"
 # Add an include directory
 include /etc/ld.so.conf.d/*.conf
 EOF
-mkdir -pv /etc/ld.so.conf.d
+mkdir -pv /etc/ld.so.conf.d &&
+${log} `basename "$0"` " installed" target &&
+${log} `basename "$0"` " finished" target 

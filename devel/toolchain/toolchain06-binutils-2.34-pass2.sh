@@ -1,4 +1,6 @@
 #!/bin/bash
+${log} `basename "$0"` " started" toolchain &&
+
 if test -d $LFS/sources/binutils-2.34
  then
   rm -rf $LFS/sources/binutils-2.34
@@ -22,8 +24,16 @@ RANLIB=$LFS_TGT-ranlib         \
     --disable-werror           \
     --with-lib-path=/tools/lib \
     --with-sysroot &&
+${log} `basename "$0"` " configured" toolchain &&
+
 make &&
+${log} `basename "$0"` " build" toolchain &&
+
 make install &&
-make -C ld clean
-make -C ld LIB_PATH=/usr/lib:/lib
-cp -v ld/ld-new /tools/bin
+${log} `basename "$0"` " installed" toolchain &&
+make -C ld clean &&
+make -C ld LIB_PATH=/usr/lib:/lib &&
+${log} `basename "$0"` " build ld" toolchain &&
+cp -v ld/ld-new /tools/bin &&
+${log} `basename "$0"` " installed ld" toolchain &&
+${log} `basename "$0"` " finished" toolchain

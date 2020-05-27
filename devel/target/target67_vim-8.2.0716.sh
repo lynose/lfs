@@ -1,4 +1,5 @@
 #!/bin/bash
+${log} `basename "$0"` " started" target &&
 if test -d /sources/vim-8.2.0716
  then
   rm -rf /sources/vim-8.2.0716
@@ -9,23 +10,23 @@ tar -xzf /sources/vim-8.2.0716.tar.gz -C /sources/ &&
 cd /sources/vim-8.2.0716 &&
 
 echo '#define SYS_VIMRC_FILE "/etc/vimrc"' >> src/feature.h &&
-
 ./configure --prefix=/usr &&
+${log} `basename "$0"` " configured" target &&
 
 make &&
+${log} `basename "$0"` " built" target &&
 
 #chown -Rv nobody . &&
 
 #su nobody -s /bin/bash -c "LANG=en_US.UTF-8 make -j1 test" &> vim-test.log &&
 
 make install &&
-
 ln -sv vim /usr/bin/vi &&
 for L in  /usr/share/man/{,*/}man1/vim.1; do
     ln -sv vim.1 $(dirname $L)/vi.1
 done
-
 ln -sv ../vim/vim82/doc /usr/share/doc/vim-8.2.0716 &&
+${log} `basename "$0"` " installed" target &&
 
 cat > /etc/vimrc << "EOF"
 " Begin /etc/vimrc
@@ -44,3 +45,4 @@ endif
 
 " End /etc/vimrc
 EOF
+${log} `basename "$0"` " finished" target 

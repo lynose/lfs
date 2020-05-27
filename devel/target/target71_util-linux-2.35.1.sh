@@ -1,4 +1,5 @@
 #!/bin/bash
+${log} `basename "$0"` " started" target &&
 if test -d /sources/util-linux-2.35.1
  then
   rm -rf /sources/util-linux-2.35.1
@@ -25,9 +26,13 @@ rm -vf /usr/lib/pkgconfig/{blkid,fdisk,mount,uuid}.pc &&
             --disable-pylibmount \
             --disable-static     \
             --without-python  &&
+${log} `basename "$0"` " configured" target &&
 
 make &&
+${log} `basename "$0"` " built" target &&
 #chown -Rv nobody .
 #su nobody -s /bin/bash -c "PATH=$PATH make check"
 
-make install
+make install &&
+${log} `basename "$0"` " installed" target &&
+${log} `basename "$0"` " finished" target 
