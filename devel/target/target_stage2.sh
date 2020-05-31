@@ -51,7 +51,7 @@ ${log} `basename "$0"` " ======================================" target &&
 ${log} `basename "$0"` " ======================================" target &&
 ./target57_gzip-1.10.sh &&
 ${log} `basename "$0"` " ======================================" target &&
-./target58_zstd-1.4.4.sh &&
+./target58_zstd-1.4.5.sh &&
 ${log} `basename "$0"` " ======================================" target &&
 ./target59_iproute2-5.6.0.sh &&
 ${log} `basename "$0"` " ======================================" target &&
@@ -77,7 +77,7 @@ ${log} `basename "$0"` " ======================================" target &&
 ${log} `basename "$0"` " ======================================" target &&
 ./target70_procps-ng-3.3.16.sh &&
 ${log} `basename "$0"` " ======================================" target &&
-./target71_util-linux-2.35.1.sh &&
+./target71_util-linux-2.35.2.sh &&
 ${log} `basename "$0"` " ======================================" target &&
 ./target72_e2fsprogs-1.45.6.sh &&
 ${log} `basename "$0"` " ======================================" target &&

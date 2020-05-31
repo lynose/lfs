@@ -37,5 +37,6 @@ passwd lfs
 chown -v lfs $LFS/tools
 chown -v lfs $LFS/sources
 chown -vR lfs $LFS/sh
+chown -vR lfs $LFS/log
 
 su - lfs

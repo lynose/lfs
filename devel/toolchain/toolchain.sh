@@ -5,7 +5,7 @@ ${log} `basename "$0"` " ======================================" toolchain &&
 ${log} `basename "$0"` " ======================================" toolchain &&
 ./toolchain02-gcc-10.1.0-pass1.sh &&
 ${log} `basename "$0"` " ======================================" toolchain &&
-./toolchain03-linux-header-5.6.13.sh &&
+./toolchain03-linux-header-5.6.15.sh &&
 ${log} `basename "$0"` " ======================================" toolchain &&
 ./toolchain04-glibc-2.31.sh &&
 ${log} `basename "$0"` " ======================================" toolchain &&
@@ -27,7 +27,7 @@ ${log} `basename "$0"` " ======================================" toolchain &&
 ${log} `basename "$0"` " ======================================" toolchain &&
 ./toolchain13-bash-5.0.sh &&
 ${log} `basename "$0"` " ======================================" toolchain &&
-./toolchain14-bison-3.6.1.sh &&
+./toolchain14-bison-3.6.2.sh &&
 ${log} `basename "$0"` " ======================================" toolchain &&
 ./toolchain15-flex-2.6.4.sh &&
 ${log} `basename "$0"` " ======================================" toolchain &&
@@ -65,7 +65,7 @@ ${log} `basename "$0"` " ======================================" toolchain &&
 ${log} `basename "$0"` " ======================================" toolchain &&
 ./toolchain31-texinfo-6.7.sh &&
 ${log} `basename "$0"` " ======================================" toolchain &&
-./toolchain32-util-linux-2.35.1.sh &&
+./toolchain32-util-linux-2.35.2.sh &&
 ${log} `basename "$0"` " ======================================" toolchain &&
 ./toolchain33-xz-5.2.5.sh &&
 ${log} `basename "$0"` " ======================================" toolchain &&

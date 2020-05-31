@@ -1,7 +1,7 @@
 ${log} `basename "$0"` " ======================================" target &&
 ${log} `basename "$0"`  "Started Toolchain build in $LFS" target &&
 ${log} `basename "$0"` " ======================================" target &&
-./target02_linux-header-5.6.13.sh &&
+./target02_linux-header-5.6.15.sh &&
 ${log} `basename "$0"` " ======================================" target &&
 ./target03_man-pages-5.06.sh &&
 ${log} `basename "$0"` " ======================================" target &&
@@ -53,7 +53,7 @@ ${log} `basename "$0"` " ======================================" target &&
 ${log} `basename "$0"` " ======================================" target &&
 ./target27_gettext-0.20.2.sh &&
 ${log} `basename "$0"` " ======================================" target &&
-./target28_bison-3.6.1.sh &&
+./target28_bison-3.6.2.sh &&
 ${log} `basename "$0"` " ======================================" target &&
 ./target29_flex-2.6.4.sh &&
 ${log} `basename "$0"` " ======================================" target &&
