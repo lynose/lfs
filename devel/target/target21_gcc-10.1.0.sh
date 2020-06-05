@@ -35,8 +35,8 @@ ${log} `basename "$0"` " built" target &&
 
 ulimit -s 32768 &&
 
-chown -Rv nobody . &&
-su nobody -s /bin/bash -c "PATH=$PATH make -k check" &&
+chown -Rv tester . 
+su tester -c "PATH=$PATH make -k check" &&
 ${log} `basename "$0"` " Unexpected succeeded" target
 
 ../gcc-10.1.0/contrib/test_summary

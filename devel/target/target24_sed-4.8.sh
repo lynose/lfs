@@ -20,7 +20,8 @@ ${log} `basename "$0"` " built" target &&
 make html &&
 ${log} `basename "$0"` " built html doc" target &&
 
-make check &&
+chown -Rv tester . &&
+su tester -c "PATH=$PATH make check" &&
 ${log} `basename "$0"` " checked" target &&
 
 make install &&

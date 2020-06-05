@@ -16,7 +16,8 @@ ${log} `basename "$0"` " configured" target &&
 make &&
 ${log} `basename "$0"` " built" target &&
 
-make check -j1 &&
+chown -Rv tester . &&
+su tester -c "PATH=$PATH make -j1 check" &&
 ${log} `basename "$0"` " unexpected check succeed" target
 ${log} `basename "$0"` " expected check failed?" target
 

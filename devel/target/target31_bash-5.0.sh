@@ -20,9 +20,12 @@ ${log} `basename "$0"` " configured" target &&
 make &&
 ${log} `basename "$0"` " built" target &&
 
-chown -Rv nobody . &&
-su nobody -s /bin/bash -c "PATH=$PATH HOME=/home make tests" &&
-${log} `basename "$0"` " unexpected succeeded" target
+chown -Rv tester . &&
+su tester << EOF
+PATH=$PATH make tests < $(tty)
+EOF 
+${log} `basename "$0"` " check with unkown results" target
+
 
 make install &&
 mv -vf /usr/bin/bash /bin &&

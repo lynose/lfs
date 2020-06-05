@@ -1,4 +1,6 @@
 #!/bin/bash
+echo $LFS
+
 chown -R root:root $LFS/tools &&
 
 mkdir -pv $LFS/{dev,proc,sys,run} &&
@@ -22,6 +24,6 @@ chroot "$LFS" /tools/bin/env -i \
     TERM="$TERM"                \
     PS1='\u:\w\$ '              \
     PATH=/bin:/usr/bin:/sbin:/usr/sbin:/tools/bin \
-    MAKEFLAGS='-j 16' \
+    MAKEFLAGS='-j 1' \
     log=/sh/log/logger.sh \
     /tools/bin/bash --login +h

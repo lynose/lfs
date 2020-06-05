@@ -29,10 +29,6 @@ ${log} `basename "$0"` " ======================================" toolchain &&
 ${log} `basename "$0"` " ======================================" toolchain &&
 ./toolchain14-bison-3.6.2.sh &&
 ${log} `basename "$0"` " ======================================" toolchain &&
-./toolchain15-flex-2.6.4.sh &&
-${log} `basename "$0"` " ======================================" toolchain &&
-./toolchain16-bzip2-1.0.8.sh &&
-${log} `basename "$0"` " ======================================" toolchain &&
 ./toolchain17-coreutils-8.32.sh &&
 ${log} `basename "$0"` " ======================================" toolchain &&
 ./toolchain18-diffutils-3.7.sh &&

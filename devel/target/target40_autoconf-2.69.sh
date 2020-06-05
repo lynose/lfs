@@ -19,4 +19,4 @@ ${log} `basename "$0"` " built" target &&
 #make check && #broker by bash-5.0 and libtool-2.4.3
 make install &&
 ${log} `basename "$0"` " installed" target &&
-${log} `basename "$0"` " finished" targe
+${log} `basename "$0"` " finished" target

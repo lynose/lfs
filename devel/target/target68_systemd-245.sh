@@ -8,6 +8,7 @@ fi
 tar -xzf /sources/systemd-245.tar.gz -C /sources/ &&
 
 cd /sources/systemd-245 &&
+patch -Np1 -i ../systemd-245-gcc_10-fixes-1.patch &&
 
 ln -sf /tools/bin/true /usr/bin/xsltproc &&
 
