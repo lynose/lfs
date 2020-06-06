@@ -123,7 +123,7 @@ unset ZONEINFO &&
 
 tzselect &&
 
-ln -sfv /usr/share/zoneinfo/Europe/Berlin /etc/localtime
+ln -sfv /usr/share/zoneinfo/Europe/Berlin /etc/localtime &&
 
 cat > /etc/ld.so.conf << "EOF"
 # Begin /etc/ld.so.conf

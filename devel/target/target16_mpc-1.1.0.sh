@@ -26,4 +26,4 @@ ${log} `basename "$0"` " checked" target &&
 make install &&
 make install-html &&
 ${log} `basename "$0"` " installed" target &&
-${log} `basename "$0"` " finished" targetec
+${log} `basename "$0"` " finished" target

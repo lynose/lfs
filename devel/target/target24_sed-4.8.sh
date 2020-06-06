@@ -21,8 +21,9 @@ make html &&
 ${log} `basename "$0"` " built html doc" target &&
 
 chown -Rv tester . &&
-su tester -c "PATH=$PATH make check" &&
-${log} `basename "$0"` " checked" target &&
+su tester -c "PATH=$PATH make -j1 check" &&
+${log} `basename "$0"` " Unexpected Test succeeded" target
+${log} `basename "$0"` " expected test fail?" target
 
 make install &&
 install -d -m755           /usr/share/doc/sed-4.8 &&
