@@ -20,10 +20,10 @@ ${log} `basename "$0"` " configured" target &&
 make &&
 ${log} `basename "$0"` " built" target &&
 
-chown -Rv tester . &&
-su tester << EOF
-PATH=$PATH make tests < $(tty)
-EOF 
+#chown -Rv tester . &&
+#su tester << EOF
+#PATH=$PATH make tests < $(tty)
+#EOF 
 ${log} `basename "$0"` " check with unkown results" target
 
 
