@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="ch-intro-changelog">
+  <?dbhtml filename="changelog.html"?>
+
+  <title>Changelog</title>
+
+  <para>This is version 
+        <phrase revision="sysv">&version;</phrase>
+        <phrase revision="systemd">&versiond;</phrase>
+  of the Linux From Scratch book, dated
+  &releasedate;. If this book is more than six months old, a newer and better
+  version is probably already available. To find out, please check one of the
+  mirrors via <ulink url="&lfs-root;mirrors.html"/>.</para>
+
+  <para>Below is a list of changes made since the previous release of the
+  book.</para>
+
+  <itemizedlist>
+    <title>Changelog Entries:</title>
+
+<!-- Changelog template
+
+    <listitem>
+      <para>Date</para>
+      <itemizedlist>
+        <listitem>
+          <para>[name] - New changelog entry.</para>
+        </listitem>
+        <listitem>
+          <para>[name] - Previous changelog entry.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    Note:  If a change is only specific to sysv or systemd, then use
+    <listitem revision="sysv"> or <listitem revision="systemd"> as
+    appropriate for the entry or if needed the entire day's listitem.
+    -->
+
+    <listitem>
+      <para>2020-06-03</para>
+      <itemizedlist>
+        <listitem revision="systemd">
+          <para>[renodr] - Fix systemd's build with GCC-10 with a patch instead
+          of CFLAGS.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to perl-5.30.3 (security update). Fixes
+          <ulink url="&lfs-ticket-root;4664">#4664</ulink>.</para>
+        </listitem>
+        <listitem revision="systemd">
+          <para>[renodr] - Update to dbus-1.12.18 (security update). Fixes
+          <ulink url="&lfs-ticket-root;4665">#4665</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to man-db-2.9.2. Fixes
+          <ulink url="&lfs-ticket-root;4663">#4663</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to libcap-2.36. Fixes
+          <ulink url="&lfs-ticket-root;4666">#4666</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Update to bison-3.6.3. Fixes
+          <ulink url="&lfs-ticket-root;4667">#4667</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2020-05-31</para>
+      <itemizedlist>
+        <listitem>
+          <para>[pierre] - Fix bash tests: add a couple of symlinks
+          from /bin to /tools, create the tester user with the uid of
+          the tty owner, run the bash tests with su &lt;&lt; EOF, and
+          explicitely defining stdin (with help from thomas and bdubbs).</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2020-05-29</para>
+      <itemizedlist>
+        <listitem>
+          <para>[xry111] - Move flex earlier in chapter 6, so that binutils
+          can use it.</para>
+        </listitem>
+        <listitem>
+          <para>[xry111] - Remove bzip2 and flex from chapter 5.</para>
+        </listitem>
+        <listitem>
+          <para>[xry111] - Move zstd earlier in chapter 6, so that file and
+          GCC can use it.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Run sed and findutils tests as an
+          unprivileged user. Fixes
+          <ulink url="&lfs-ticket-root;4661">#4661</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2020-05-28</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Add an unprivileged user, tester, at the 
+          beginning of Chapter 6 for running some tests.  This
+          user is then removed at the end of the chapter.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to zstd-1.4.5. Fixes
+          <ulink url="&lfs-ticket-root;4660">#4660</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to util-linux-2.35.2. Fixes
+          <ulink url="&lfs-ticket-root;4659">#4659</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to bison-3.6.2. Fixes
+          <ulink url="&lfs-ticket-root;4657">#4657</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[pierre] - Update to linux-5.6.15. Fixes
+          <ulink url="&lfs-ticket-root;4658">#4658</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2020-05-27</para>
+      <itemizedlist>
+        <listitem>
+          <para>[pierre] - Bash: document test results.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2020-05-26</para>
+      <itemizedlist>
+        <listitem>
+          <para>[pierre] - Bash: do not use "su -c command" to change user
+          to nobody: it removes the controlling terminal and makes some
+          tests fail. Use "su &lt;&lt; EOF" instead.</para>
+        </listitem>
+        <listitem>
+          <para>[pierre] - Mount /dev/pts with "--bind", so that "tty"
+          knows there is a terminal. Fixes a test in coreutils.</para>
+        </listitem>
+        <listitem>
+          <para>[pierre] - Add a patch to fix a failure in gold test suite,
+          which really needs -fcommon in some tests.</para>
+        </listitem>
+        <listitem>
+          <para>[pierre] - Fix a failure in automake test suite.</para>
+        </listitem>
+        <listitem>
+          <para>[pierre] - Update to vim-8.2.0814.</para>
+        </listitem>
+        <listitem>
+          <para>[pierre] - Add a symlink from /tools/lib/locale
+          to /usr/lib/locale/locale-archive, to allow some programs
+          to find the installed locales. Fixes test failures in bison
+          and man-db.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2020-05-21</para>
+      <itemizedlist>
+        <listitem>
+          <para>[pierre] - Fix a crash at early boot when using
+          CONFIG_STACK_PROTECTOR_STRONG=y in kernel configuration.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2020-05-16</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to meson-0.54.2. Fixes
+          <ulink url="&lfs-ticket-root;4656">#4656</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to Python-3.8.3. Fixes
+          <ulink url="&lfs-ticket-root;4655">#4655</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to bison-3.6.1. Fixes
+          <ulink url="&lfs-ticket-root;4654">#4654</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-5.6.13. Fixes
+          <ulink url="&lfs-ticket-root;4653">#4653</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem revision="systemd">
+      <para>2020-05-09</para>
+      <itemizedlist>
+        <listitem>
+          <para>[pierre] - Pass -Wno-format-overflow to systemd to
+          prevent an error with GCC 10.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2020-05-08</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to vim-8.2.0716.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to bison-3.6. Fixes
+          <ulink url="&lfs-ticket-root;4652">#4652</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to gcc-10.1.0. Fixes
+          <ulink url="&lfs-ticket-root;4651">#4651</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to libcap-2.34. Fixes
+          <ulink url="&lfs-ticket-root;4650">#4650</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to bc-2.7.2. Fixes
+          <ulink url="&lfs-ticket-root;4648">#4648</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-5.6.11. Fixes
+          <ulink url="&lfs-ticket-root;4649">#4649</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2020-05-01</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to tzdata-2020a. Fixes
+          <ulink url="&lfs-ticket-root;4644">#4644</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to meson-0.54.1. Fixes
+          <ulink url="&lfs-ticket-root;4646">#4646</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to iana-etc-20200429. Fixes
+          <ulink url="&lfs-ticket-root;4645">#4645</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-5.6.8. Fixes
+          <ulink url="&lfs-ticket-root;4630">#4630</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2020-04-23</para>
+      <itemizedlist>
+        <listitem>
+          <para>[ken] - Update to openssl-1.1.1g (Security Fix). Fixes
+          <ulink url="&lfs-ticket-root;4643">#4643</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2020-04-20</para>
+      <itemizedlist>
+        <listitem>
+          <para>[pierre] - Change -isystem to -idirafter in "Adjusting the
+          toolchain". This allows to search g++ private headers before
+          the public ones, which is the normal search order, with the
+          drawback that it includes the headers in /tools if they exist
+          in both /usr and /tools. Fix most of
+          <ulink url="&lfs-ticket-root;4641">#4641</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2020-04-19</para>
+      <itemizedlist>
+        <listitem>
+          <para>[pierre] - Build util-linux in chapter 5 for both books.
+          link util-linux libraries and headers from /usr to /tools.
+          Copy util-linux pkg-config files from /tools to /usr, changing
+          any occurence of /tools to /usr. Also move eudev before util-linux.
+          Fixes <ulink url="&lfs-ticket-root;4637">#4637</ulink>,
+          <ulink url="&lfs-ticket-root;4638">#4638</ulink>, and
+          <ulink url="&lfs-ticket-root;4642">#4642</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[pierre] - Reinstate flex in chapter 5, so that ar and ranlib
+          (binutils) link against libfl. This allows to run tests for bison,
+          too. Fixes
+          <ulink url="&lfs-ticket-root;4631">#4631</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[pierre] - Prevent readline.pc from referencing termcap as
+          a private library by adding --with-curses to configure switches.
+          Fixes <ulink url="&lfs-ticket-root;4635">#4635</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[pierre] - Allow bison to use the libtextstyle.so library from
+          gettext, by moving gettext before bison. Fixes
+          <ulink url="&lfs-ticket-root;4634">#4634</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[pierre] - Allow some shadow programs to use "setcap" by
+          moving libcap before shadow. Fixes
+          <ulink url="&lfs-ticket-root;4633">#4633</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[pierre] - Fix a wrong hardcoded path in some programs
+          from the shadow package. Fixes
+          <ulink url="&lfs-ticket-root;4632">#4632</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2020-04-15</para>
+      <itemizedlist>
+        <listitem revision="systemd">
+          <para>[renodr] - Install the man pages in systemd. Fixes
+          <ulink url="&lfs-ticket-root;4627">#4627</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to gawk-5.1.0. Fixes
+          <ulink url="&lfs-ticket-root;4629">#4629</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to gettext-0.20.2. Fixes
+          <ulink url="&lfs-ticket-root;4628">#4628</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to man-pages-5.06. Fixes
+          <ulink url="&lfs-ticket-root;4626">#4626</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to bc-2.6.1. Fixes
+          <ulink url="&lfs-ticket-root;4625">#4625</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to bison-3.5.4. Fixes
+          <ulink url="&lfs-ticket-root;4623">#4623</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to iproute2-5.6.0. Fixes
+          <ulink url="&lfs-ticket-root;4622">#4622</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-5.6.4. Fixes
+          <ulink url="&lfs-ticket-root;4615">#4615</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2020-04-01</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to vim-8.2.0486. Addresses
+          <ulink url="&lfs-ticket-root;4500">#4500</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to elfutils-0.179. Fixes
+          <ulink url="&lfs-ticket-root;4621">#4621</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to meson-0.54.0. Fixes
+          <ulink url="&lfs-ticket-root;4620">#4620</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to e2fsprogs-1.45.6. Fixes
+          <ulink url="&lfs-ticket-root;4619">#4619</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to automake-1.16.2. Fixes
+          <ulink url="&lfs-ticket-root;4618">#4618</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to xz-5.2.5. Fixes
+          <ulink url="&lfs-ticket-root;4617">#4617</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to openssl-1.1.1f. Fixes
+          <ulink url="&lfs-ticket-root;4616">#4616</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to perl-5.30.2. Fixes
+          <ulink url="&lfs-ticket-root;4614">#4614</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2020-03-29</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Textual updates thanks to Kevin Buckley.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem revision="systemd">
+      <para>2020-03-19</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - Update to systemd-245. Fixes
+          <ulink url="&lfs-ticket-root;4593">#4593</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem revision="systemd">
+      <para>2020-03-18</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - Make minor modifications to the kernel configuration
+          in order to match the configuration options to there current positions
+          in Linux-5.5</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2020-03-29</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Textual updates thanks to Kevin Buckley.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem revision="systemd">
+      <para>2020-03-19</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - Update to systemd-245. Fixes
+          <ulink url="&lfs-ticket-root;4593">#4593</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem revision="systemd">
+      <para>2020-03-18</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - Make minor modifications to the kernel configuration
+          in order to match the configuration options to there current positions
+          in Linux-5.5</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2020-03-15</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to gcc-9.3.0. Fixes
+          <ulink url="&lfs-ticket-root;4613">#4613</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to bc-2.6.0. Fixes
+          <ulink url="&lfs-ticket-root;4612">#4612</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to bison-3.5.3. Fixes
+          <ulink url="&lfs-ticket-root;4611">#4611</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-5.5.9. Fixes
+          <ulink url="&lfs-ticket-root;4610">#4610</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to coreutils-8.32. Fixes
+          <ulink url="&lfs-ticket-root;4609">#4609</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2020-03-02</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - Update to Python-3.8.2. Fixes
+          <ulink url="&lfs-ticket-root;4606">#4606</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to meson-0.52.2. Fixes
+          <ulink url="&lfs-ticket-root;4605">#4605</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to man-db-2.9.1. Fixes
+          <ulink url="&lfs-ticket-root;4604">#4604</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to kmod-27. Fixes
+          <ulink url="&lfs-ticket-root;4603">#4603</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to procps-3.3.16. Fixes
+          <ulink url="&lfs-ticket-root;4602">#4602</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to psmisc-23.3. Fixes
+          <ulink url="&lfs-ticket-root;4601">#4601</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to libcap-2.33. Fixes
+          <ulink url="&lfs-ticket-root;4600">#4608</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[bdubbs] - Update to linux-5.5.7. Fixes
+          <ulink url="&lfs-ticket-root;4598">#4598</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2020-03-01</para>
+      <itemizedlist>
+        <listitem>
+          <para>[bdubbs] - LFS-9.1 released.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+  </itemizedlist>
+</sect1>

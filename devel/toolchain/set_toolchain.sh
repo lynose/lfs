@@ -30,6 +30,8 @@ fi
 cp -R ../sources $LFS
 cp -R ../toolchain $LFS/sh
 cp -R ../target $LFS/sh
+cp -R ../config $LFS/sh
+
 
 groupadd lfs
 useradd -s /bin/bash -g lfs -m -k /dev/null lfs

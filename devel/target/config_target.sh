@@ -8,7 +8,7 @@ umask 022
 LC_ALL=POSIX
 LFS_TGT=$(uname -m)-lfs-linux-gnu
 PATH=/tools/bin:/bin:/usr/bin
-MAKEFLAGS='-j 32'
+MAKEFLAGS='-j 8'
 export LFS LC_ALL LFS_TGT PATH MAKEFLAGS
 EOF
 source ~/.bash_profile
