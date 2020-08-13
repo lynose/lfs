@@ -30,8 +30,4 @@ ${log} `basename "$0"` " build" crosstemp &&
 
 make DESTDIR=$LFS install &&
 ${log} `basename "$0"` " installed" crosstemp &&
-if [ -d $LFS/sources/binutils-2.35 ]
- then
-  rm -rf $LFS/sources/binutils-2.35
-fi
 ${log} `basename "$0"` " finished" crosstemp

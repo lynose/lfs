@@ -56,9 +56,5 @@ ${log} `basename "$0"` " build" crosstemp &&
 make DESTDIR=$LFS install &&
 ln -sv gcc $LFS/usr/bin/cc &&
 ${log} `basename "$0"` " installed" crosstemp &&
-if [ -d $LFS/sources/gcc-10.2.0 ]
- then
-  rm -rf $LFS/sources/gcc-10.2.0
-fi
 ${log} `basename "$0"` " finished" crosstemp
 

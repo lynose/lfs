@@ -1,12 +1,14 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" roottools &&
 
-cd $LFS/sources/gcc-10.2.0 &&
-
-if [ -d build ]
+if [ -d /sources/gcc-10.2.0 ]
  then
-  rm -rf build
+  rm -rf /sources/gcc-10.2.0
 fi
+
+tar xf /sources/gcc-10.2.0.tar.xz -C /sources/ &&
+
+cd /sources/gcc-10.2.0 &&
 
 ln -s gthr-posix.h libgcc/gthr-default.h
 

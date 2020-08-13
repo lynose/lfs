@@ -22,8 +22,4 @@ mv -v $LFS/usr/bin/{lzma,unlzma,lzcat,xz,unxz,xzcat}  $LFS/bin &&
 mv -v $LFS/usr/lib/liblzma.so.*                       $LFS/lib &&
 ln -svf ../../lib/$(readlink $LFS/usr/lib/liblzma.so) $LFS/usr/lib/liblzma.so &&
 ${log} `basename "$0"` " installed" crosstemp &&
-if [ -d $LFS/sources/xz-5.2.5 ]
- then
-  rm -rf $LFS/sources/xz-5.2.5
-fi
 ${log} `basename "$0"` " finished" crosstemp

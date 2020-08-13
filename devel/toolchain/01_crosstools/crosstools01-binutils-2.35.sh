@@ -29,10 +29,4 @@ ${log} `basename "$0"` " build" crosstools &&
 make install &&
 
 ${log} `basename "$0"` " installed" crosstools &&
-
-if [ -d $LFS/sources/binutils-2.35 ]
- then
-  rm -rf $LFS/sources/binutils-2.35
-fi
-
 ${log} `basename "$0"` " finished" crosstools

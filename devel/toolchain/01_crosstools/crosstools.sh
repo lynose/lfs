@@ -7,7 +7,7 @@ ${log} `basename "$0"` " ======================================" crosstools &&
 ${log} `basename "$0"` " ======================================" crosstools &&
 ./crosstools03-linux-header-5.7.12.sh &&
 ${log} `basename "$0"` " ======================================" crosstools &&
-./crosstools04-glibc-2.31.sh &&
+./crosstools04-glibc-2.32.sh &&
 ${log} `basename "$0"` " ======================================" crosstools &&
 ./crosstools05-gcc-stdc++-10.2.0-pass1.sh &&
 ${log} `basename "$0"` " ======================================" crosstools &&

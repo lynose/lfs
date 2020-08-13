@@ -22,8 +22,4 @@ ${log} `basename "$0"` " build" crosstemp &&
 
 make DESTDIR=$LFS install &&
 ${log} `basename "$0"` " installed" crosstemp &&
-if  [ -d $LFS/sources/m4-1.4.18 ]
- then
-  rm -rf $LFS/sources/m4-1.4.18
-fi
 ${log} `basename "$0"` " finished" crosstemp

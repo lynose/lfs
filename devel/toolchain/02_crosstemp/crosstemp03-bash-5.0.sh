@@ -22,8 +22,4 @@ make DESTDIR=$LFS install &&
 mv $LFS/usr/bin/bash $LFS/bin/bash &&
 ln -sv bash $LFS/bin/sh &&
 ${log} `basename "$0"` " installed" crosstemp &&
-if [ -d $LFS/sources/bash-5.0 ]
- then
-  rm -rf $LFS/sources/bash-5.0
-fi
 ${log} `basename "$0"` " finished" crosstemp

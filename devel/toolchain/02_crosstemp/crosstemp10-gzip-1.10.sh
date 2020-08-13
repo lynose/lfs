@@ -16,8 +16,4 @@ ${log} `basename "$0"` " build" crosstemp &&
 make DESTDIR=$LFS install &&
 mv -v $LFS/usr/bin/gzip $LFS/bin &&
 ${log} `basename "$0"` " installed" crosstemp &&
-if [ -d $LFS/sources/gzip-1.10 ]
- then
-  rm -rf $LFS/sources/gzip-1.10
-fi
 ${log} `basename "$0"` " finished" crosstemp

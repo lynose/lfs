@@ -34,10 +34,4 @@ ${log} `basename "$0"` " build" crosstools &&
 
 make DESTDIR=$LFS install &&
 ${log} `basename "$0"` " installed" crosstools &&
-
-if [ -d $LFS/sources/gcc-10.2.0 ]
- then
-    rm -rf $LFS/sources/gcc-10.2.0
-fi
-
 ${log} `basename "$0"` " finished" crosstools
