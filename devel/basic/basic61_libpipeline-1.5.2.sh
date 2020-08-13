@@ -1,13 +1,15 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" basic &&
-if test -d /sources/flex-2.6.4
+if test -d /sources/libpipeline-1.5.2
  then
-  rm -rf /sources/flex-2.6.4
+  rm -rf /sources/libpipeline-1.5.2
 fi
-tar xf /sources/flex-2.6.4.tar.gz -C /sources/ &&
-cd /sources/flex-2.6.4 &&
+tar xf /sources/libpipeline-1.5.2.tar.gz -C /sources/ &&
 
-./configure --prefix=/usr --docdir=/usr/share/doc/flex-2.6.4 &&
+cd /sources/libpipeline-1.5.2 &&
+
+patch -Np1 -i ../libpipeline-1.5.2-check_fixes-3.patch &&
+./configure --prefix=/usr &&
 ${log} `basename "$0"` " configured" basic &&
 
 make &&
@@ -17,7 +19,6 @@ make check &&
 ${log} `basename "$0"` " checked" basic &&
 
 make install &&
-ln -sv flex /usr/bin/lex &&
 ${log} `basename "$0"` " installed" basic &&
 ${log} `basename "$0"` " finished" basic 
 

@@ -1,13 +1,16 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" basic &&
-if test -d /sources/flex-2.6.4
+if test -d /sources/tar-1.32
  then
-  rm -rf /sources/flex-2.6.4
+  rm -rf /sources/tar-1.32
 fi
-tar xf /sources/flex-2.6.4.tar.gz -C /sources/ &&
-cd /sources/flex-2.6.4 &&
+tar xf /sources/tar-1.32.tar.xz -C /sources/ &&
 
-./configure --prefix=/usr --docdir=/usr/share/doc/flex-2.6.4 &&
+cd /sources/tar-1.32 &&
+
+FORCE_UNSAFE_CONFIGURE=1  \
+./configure --prefix=/usr \
+            --bindir=/bin &&
 ${log} `basename "$0"` " configured" basic &&
 
 make &&
@@ -17,7 +20,7 @@ make check &&
 ${log} `basename "$0"` " checked" basic &&
 
 make install &&
-ln -sv flex /usr/bin/lex &&
+make -C doc install-html docdir=/usr/share/doc/tar-1.32 &&
 ${log} `basename "$0"` " installed" basic &&
 ${log} `basename "$0"` " finished" basic 
 

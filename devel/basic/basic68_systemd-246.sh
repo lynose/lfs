@@ -1,20 +1,19 @@
 #!/bin/bash
-${log} `basename "$0"` " started" target &&
-if test -d /sources/systemd-245
+${log} `basename "$0"` " started" basic &&
+if test -d /sources/systemd-246
  then
-  rm -rf /sources/systemd-245
+  rm -rf /sources/systemd-246
 fi
 
-tar -xzf /sources/systemd-245.tar.gz -C /sources/ &&
+tar xf /sources/systemd-246.tar.gz -C /sources/ &&
 
-cd /sources/systemd-245 &&
-patch -Np1 -i ../systemd-245-gcc_10-fixes-1.patch &&
+cd /sources/systemd-246 &&
 
 ln -sf /tools/bin/true /usr/bin/xsltproc &&
 
-tar -xf ../systemd-man-pages-245.tar.xz &&
+tar -xf ../systemd-man-pages-246.tar.xz &&
 
-sed '179,$ d' -i src/resolve/meson.build &&
+sed '177,$ d' -i src/resolve/meson.build &&
 sed -i 's/GROUP="render", //' rules.d/50-udev-default.rules.in &&
 
 mkdir -p build &&
@@ -24,7 +23,6 @@ LANG=en_US.UTF-8                    \
 meson --prefix=/usr                 \
       --sysconfdir=/etc             \
       --localstatedir=/var          \
-      -Dc_args=-Wno-format-overflow \
       -Dblkid=true                  \
       -Dbuildtype=release           \
       -Ddefault-dnssec=no           \
@@ -45,10 +43,10 @@ meson --prefix=/usr                 \
       -Duserdb=false                \
       -Dman=true                    \
       .. &&
-${log} `basename "$0"` " configured" target &&
+${log} `basename "$0"` " configured" basic &&
 
 LANG=en_US.UTF-8 ninja &&
-${log} `basename "$0"` " built" target &&
+${log} `basename "$0"` " built" basic &&
 
 LANG=en_US.UTF-8 ninja install &&
 rm -f /usr/bin/xsltproc &&
@@ -56,5 +54,5 @@ systemd-machine-id-setup &&
 systemctl preset-all &&
 systemctl disable systemd-time-wait-sync.service &&
 rm -f /usr/lib/sysctl.d/50-pid-max.conf &&
-${log} `basename "$0"` " installed" target &&
-${log} `basename "$0"` " finished" target 
+${log} `basename "$0"` " installed" basic &&
+${log} `basename "$0"` " finished" basic 

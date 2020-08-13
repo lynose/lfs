@@ -10,7 +10,7 @@ tar xf /sources/libcap-2.42.tar.xz -C /sources &&
 
 cd /sources/libcap-2.42 &&
 
-sed -i '/install.*STACAPLIBNAME/d' libcap/Makefile &&
+sed -i '/install -m.*STACAPLIBNAME/d' libcap/Makefile &&
 ${log} `basename "$0"` " configured" basic &&
 
 make lib=lib &&

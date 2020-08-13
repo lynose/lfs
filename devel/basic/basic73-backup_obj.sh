@@ -1,6 +1,6 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" target &&
-save_lib="ld-2.31.so libc-2.31.so libpthread-2.31.so libthread_db-1.0.so"
+save_lib="ld-2.32.so libc-2.32.so libpthread-2.32.so libthread_db-1.0.so"
 
 cd /lib
 
@@ -23,5 +23,3 @@ done
 
 unset LIB save_lib save_usrlib &&
 ${log} `basename "$0"` " finished" target 
-
-exec /tools/bin/bash 
