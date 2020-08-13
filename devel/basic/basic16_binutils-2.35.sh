@@ -21,7 +21,7 @@ fi
 mkdir -v build &&
 cd build &&
 
-../binutils-2.35/configure --prefix=/usr       \
+../configure --prefix=/usr       \
              --enable-gold       \
              --enable-ld=default \
              --enable-plugins    \

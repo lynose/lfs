@@ -16,14 +16,14 @@ case $(uname -m) in
   ;;
 esac
 
-if test -d ../gcc-build
+if test -d build
  then
-  rm -rf ../gcc-build
+  rm -rf build
 fi
-mkdir -v ../gcc-build &&
-cd ../gcc-build &&
-SED=sed                               \ 
-../gcc-10.2.0/configure --prefix=/usr \
+mkdir -v build &&
+cd build &&
+../configure --prefix=/usr            \
+             LD=ld                    \
              --enable-languages=c,c++ \
              --disable-multilib       \
              --disable-bootstrap      \
