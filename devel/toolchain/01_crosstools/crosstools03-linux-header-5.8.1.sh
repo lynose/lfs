@@ -1,12 +1,12 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" crosstools &&
 
-if [ -d $LFS/sources/linux-5.7.12 ]
+if [ -d $LFS/sources/linux-5.8.1 ]
  then
-  rm -rf $LFS/sources/linux-5.7.12
+  rm -rf $LFS/sources/linux-5.8.1
 fi
-tar xf $LFS/sources/linux-5.7.12.tar.xz -C $LFS/sources/ &&
-cd $LFS/sources/linux-5.7.12 &&
+tar xf $LFS/sources/linux-5.8.1.tar.xz -C $LFS/sources/ &&
+cd $LFS/sources/linux-5.8.1 &&
 
 make mrproper &&
 
