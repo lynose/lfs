@@ -51,11 +51,11 @@ ${log} `basename "$0"` " ======================================" basic &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic58_gzip-1.10.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic59_iproute2-5.7.0.sh &&
+./basic59_iproute2-5.8.0.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic60_kbd-2.3.0.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic61_libpipeline-1.5.2.sh &&
+./basic61_libpipeline-1.5.3.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic62_make-4.3.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
