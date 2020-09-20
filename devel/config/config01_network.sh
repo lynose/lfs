@@ -28,7 +28,7 @@ ln -sfv /run/systemd/resolve/resolv.conf /etc/resolv.conf
 
 
 
-echo "newhost" > /etc/hostname
+echo "Velorum" > /etc/hostname
 
 cat > /etc/hosts << "EOF"
 # Begin /etc/hosts

@@ -21,7 +21,7 @@ ${log} `basename "$0"` " expected check fail?" basic
 
 make -C libelf install &&
 install -vm644 config/libelf.pc /usr/lib/pkgconfig &&
-rm /usr/lib/libelf.a &&
+rm /lib/libelf.a &&
 ${log} `basename "$0"` " installed" basic &&
 ${log} `basename "$0"` " finished" basic 
 

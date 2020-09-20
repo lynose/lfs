@@ -11,7 +11,7 @@ LFS_TGT=$(uname -m)-lfs-linux-gnu
 PATH=/usr/bin
 if [ ! -L /bin ]; then PATH=/bin:$PATH; fi
 PATH=$LFS/tools/bin:$PATH
-MAKEFLAGS='-j 1'
+MAKEFLAGS='-j 8'
 log=${LFS}/sh/log/logger.sh
 export LFS LC_ALL LFS_TGT PATH MAKEFLAGS log
 EOF

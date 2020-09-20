@@ -23,7 +23,8 @@ ${log} `basename "$0"` " built" basic &&
 chown -Rv tester . &&
 su tester << EOF
 PATH=$PATH make tests < $(tty)
-EOF 
+EOF
+
 ${log} `basename "$0"` " check with unkown results" basic
 
 

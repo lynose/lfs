@@ -17,7 +17,9 @@ make &&
 ${log} `basename "$0"` " built" basic &&
 
 make check &&
+${log} `basename "$0"` " unexpected success?" basic
 ${log} `basename "$0"` " checked" basic &&
+
 
 make install &&
 make -C doc install-html docdir=/usr/share/doc/tar-1.32 &&

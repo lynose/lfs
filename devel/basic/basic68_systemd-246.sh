@@ -9,7 +9,7 @@ tar xf /sources/systemd-246.tar.gz -C /sources/ &&
 
 cd /sources/systemd-246 &&
 
-ln -sf /tools/bin/true /usr/bin/xsltproc &&
+ln -sf /bin/true /usr/bin/xsltproc &&
 
 tar -xf ../systemd-man-pages-246.tar.xz &&
 
