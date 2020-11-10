@@ -16,7 +16,7 @@ mkdir $LFS/log
 
 cp -R ../sources/* $LFS/sources
 cp -R ../toolchain $LFS/sh
-cp -R ../target $LFS/sh
+cp -R ../basic $LFS/sh
 cp -R ../config $LFS/sh
 cp -R ../log $LFS/sh
 
@@ -30,9 +30,9 @@ esac
 mkdir -pv $LFS/tools
 
 
-sudo groupadd lfs
-sudo useradd -s /bin/bash -g lfs -m -k /dev/null lfs
-sudo passwd lfs
+groupadd lfs
+useradd -s /bin/bash -g lfs -m -k /dev/null lfs
+passwd lfs
 
 chown -v lfs $LFS/{usr,lib,var,etc,bin,sbin,tools}
 case $(uname -m) in

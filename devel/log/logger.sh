@@ -13,6 +13,8 @@ fi
 if [ -d $LFS/log ]
   then
     LOGPATH="${LOGPATH}/log"
+  else
+    LOGPATH="/log"
 fi
 
 if [ -n ${STAGE} ]
