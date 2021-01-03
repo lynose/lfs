@@ -1,7 +1,7 @@
 ${log} `basename "$0"` " ======================================" basic &&
 ${log} `basename "$0"`  "Started Basic System build" basic &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic01_man-pages-5.08.sh &&
+./basic01_man-pages-5.10.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic02_tcl-8.6.10.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
@@ -9,7 +9,7 @@ ${log} `basename "$0"` " ======================================" basic &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic04_dejagnu-1.6.2.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic05_iana-etc-20200821.sh &&
+./basic05_iana-etc-20201229.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic06_glibc-2.32.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
@@ -19,31 +19,31 @@ ${log} `basename "$0"` " ======================================" basic &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic09_xz-5.2.5.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic10_zstd-1.4.5.sh &&
+./basic10_zstd-1.4.8.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic11_file-5.39.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic12_readline-8.0.sh &&
+./basic12_readline-8.1.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic13_m4-1.4.18.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic14_bc-3.1.5.sh &&
+./basic14_bc-3.2.4.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic15_flex-2.6.4.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic16_binutils-2.35.sh &&
+./basic16_binutils-2.35.1.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic17_gmp-6.2.0.sh &&
+./basic17_gmp-6.2.1.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic18_mpfr-4.1.0.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic19_mpc-1.1.0.sh &&
+./basic19_mpc-1.2.1.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic20_attr-2.4.48.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic21_acl-2.2.53.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic22_libcap-2.42.sh &&
+./basic22_libcap-2.46.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic23_shadow-4.8.1.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
@@ -59,10 +59,10 @@ ${log} `basename "$0"` " ======================================" basic &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic29_gettext-0.21.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic30_bison-3.7.1.sh &&
+./basic30_bison-3.7.4.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic31_grep-3.4.sh &&
+./basic31_grep-3.6.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic32_bash-5.0.sh
+./basic32_bash-5.1.sh
 
 echo "If you see this before logout, execute: exec /bin/bash --login +h"
