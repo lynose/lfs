@@ -1,19 +1,20 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" basic &&
-if test -d /sources/kmod-27
+if test -d /sources/kmod-28
  then
-  rm -rf /sources/kmod-27
+  rm -rf /sources/kmod-28
 fi
 
-tar -xJf /sources/kmod-27.tar.xz -C /sources/ &&
+tar -xJf /sources/kmod-28.tar.xz -C /sources/ &&
 
-cd /sources/kmod-27 &&
+cd /sources/kmod-28 &&
 
 ./configure --prefix=/usr          \
             --bindir=/bin          \
             --sysconfdir=/etc      \
             --with-rootlibdir=/lib \
             --with-xz              \
+            --with-zstd            \
             --with-zlib &&
 ${log} `basename "$0"` " configured" basic &&
 

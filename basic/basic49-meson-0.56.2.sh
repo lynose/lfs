@@ -1,15 +1,15 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" basic &&
-if test -d /sources/meson-0.56.0
+if test -d /sources/meson-0.56.2
  then
-  rm -rf /sources/meson-0.56.0
+  rm -rf /sources/meson-0.56.2
 fi
 
-tar xf /sources/meson-0.56.0.tar.gz -C /sources/ &&
+tar xf /sources/meson-0.56.2.tar.gz -C /sources/ &&
 
-patch -Np1 -i ../meson-0.56.0-upstream_fix-1.patch &&
+patch -Np1 -i ../meson-0.56.2-upstream_fix-1.patch &&
 
-cd /sources/meson-0.56.0 &&
+cd /sources/meson-0.56.2 &&
 
 python3 setup.py build &&
 ${log} `basename "$0"` " built" basic &&

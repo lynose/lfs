@@ -27,7 +27,7 @@ ${log} `basename "$0"` " ======================================" crosstemp &&
 ${log} `basename "$0"` " ======================================" crosstemp &&
 ./crosstemp13-sed-4.8.sh &&
 ${log} `basename "$0"` " ======================================" crosstemp &&
-./crosstemp14-tar-1.32.sh &&
+./crosstemp14-tar-1.33.sh &&
 ${log} `basename "$0"` " ======================================" crosstemp &&
 ./crosstemp15-xz-5.2.5.sh &&
 ${log} `basename "$0"` " ======================================" crosstemp &&

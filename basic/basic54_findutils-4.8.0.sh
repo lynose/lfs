@@ -1,14 +1,14 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" basic &&
 
-if test -d /sources/findutils-4.7.0
+if test -d /sources/findutils-4.8.0
  then
-  rm -rf /sources/findutils-4.7.0
+  rm -rf /sources/findutils-4.8.0
 fi
 
-tar xf /sources/findutils-4.7.0.tar.xz -C /sources/ &&
+tar xf /sources/findutils-4.8.0.tar.xz -C /sources/ &&
 
-cd /sources/findutils-4.7.0 &&
+cd /sources/findutils-4.8.0 &&
 
 ./configure --prefix=/usr --localstatedir=/var/lib/locate &&
 ${log} `basename "$0"` " configured" basic &&

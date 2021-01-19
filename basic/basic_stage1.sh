@@ -3,7 +3,7 @@ ${log} `basename "$0"`  "Started Basic System build" basic &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic01_man-pages-5.10.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic02_tcl-8.6.10.sh &&
+./basic02_tcl-8.6.11.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic03_expect-5.45.4.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
