@@ -1,12 +1,12 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" crosstemp &&
 
-if [ -d $LFS/sources/findutils-4.7.0 ]
+if [ -d $LFS/sources/findutils-4.8.0 ]
  then
-  rm -rf $LFS/sources/findutils-4.7.0
+  rm -rf $LFS/sources/findutils-4.8.0
 fi
-tar xf $LFS/sources/findutils-4.7.0.tar.xz -C $LFS/sources/ &&
-cd $LFS/sources/findutils-4.7.0 &&
+tar xf $LFS/sources/findutils-4.8.0.tar.xz -C $LFS/sources/ &&
+cd $LFS/sources/findutils-4.8.0 &&
 
 ./configure --prefix=/usr   \
             --host=$LFS_TGT \
