@@ -16,10 +16,6 @@ case $(uname -m) in
   ;;
 esac
 
-if test -d build
- then
-  rm -rf build
-fi
 mkdir -v build &&
 cd build &&
 ../configure --prefix=/usr            \
@@ -35,7 +31,7 @@ ${log} `basename "$0"` " built" basic &&
 
 ulimit -s 32768 &&
 
-chown -Rv tester . 
+chown -Rv tester . &&
 su tester -c "PATH=$PATH make -k check" &&
 ${log} `basename "$0"` " Unexpected succeeded" basic
 
