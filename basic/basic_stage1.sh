@@ -1,6 +1,13 @@
 ${log} `basename "$0"` " ======================================" basic &&
+${log} `basename "$0"`  "Global config" basic &&
+${log} `basename "$0"` " ======================================" basic &&
+export ENABLE_TEST=true
+
+
+${log} `basename "$0"` " ======================================" basic &&
 ${log} `basename "$0"`  "Started Basic System build" basic &&
 ${log} `basename "$0"` " ======================================" basic &&
+
 ./basic01_man-pages-5.10.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic02_tcl-8.6.11.sh &&
