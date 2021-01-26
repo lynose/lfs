@@ -24,12 +24,10 @@ if [ ${ENABLE_TEST} == true ]
  then
     chown -Rv tester . &&
     su tester << EOF
-    PATH=$PATH make tests < $(tty)
-    EOF
+PATH=$PATH make tests < $(tty)
+EOF
     ${log} `basename "$0"` " check with unkown results" basic
 fi
-
-
 
 make install &&
 mv -vf /usr/bin/bash /bin &&

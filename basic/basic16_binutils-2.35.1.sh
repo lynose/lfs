@@ -30,9 +30,13 @@ ${log} `basename "$0"` " configured" basic &&
 make tooldir=/usr &&
 ${log} `basename "$0"` " built" basic &&
 
-#critical section
-make -k check &&
-${log} `basename "$0"` " important test succeed" basic &&
+if [ ${ENABLE_TEST} == true ]
+ then
+  #critical section
+  make -k check &&
+  ${log} `basename "$0"` " check succeed" blfs_all ||
+  ${log} `basename "$0"` " critical check fail?" blfs_all
+fi
 
 make tooldir=/usr install &&
 ${log} `basename "$0"` " installed" basic &&

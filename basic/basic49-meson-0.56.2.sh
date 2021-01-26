@@ -7,8 +7,6 @@ fi
 
 tar xf /sources/meson-0.56.2.tar.gz -C /sources/ &&
 
-patch -Np1 -i ../meson-0.56.2-upstream_fix-1.patch &&
-
 cd /sources/meson-0.56.2 &&
 
 python3 setup.py build &&
