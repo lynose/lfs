@@ -16,9 +16,9 @@ ${log} `basename "$0"` " configured" basic &&
 make &&
 ${log} `basename "$0"` " built" basic &&
 
-chown -Rv tester . &&
-
-su tester -c "LANG=en_US.UTF-8 make -j1 test" &> vim-test.log &&
+# chown -Rv tester . &&
+# 
+# su tester -c "LANG=en_US.UTF-8 make -j1 test" &> vim-test.log &&
 
 make install &&
 ln -sv vim /usr/bin/vi &&
@@ -29,7 +29,7 @@ cd /usr/share/vim &&
 ln -sfv ../vim/vim82/doc /usr/share/doc/vim-8.2.1361 &&
 ${log} `basename "$0"` " installed" basic &&
 
-cat > /etc/vimrc << "EOF"
+cat > /etc/vimrc << "EOF" &&
 " Begin /etc/vimrc
 
 " Ensure defaults are set before customizing settings, not after
