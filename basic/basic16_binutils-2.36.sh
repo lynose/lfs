@@ -1,14 +1,14 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" basic &&
 
-if test -d /sources/binutils-2.35.1
+if test -d /sources/binutils-2.36
  then
-  rm -rf /sources/binutils-2.35.1
+  rm -rf /sources/binutils-2.36
 fi
 
-tar -xJf /sources/binutils-2.35.1.tar.xz -C /sources &&
+tar -xJf /sources/binutils-2.36.tar.xz -C /sources &&
 
-cd /sources/binutils-2.35.1 &&
+cd /sources/binutils-2.36 &&
 
 expect -c "spawn ls" > /root/spawn.log &&
 

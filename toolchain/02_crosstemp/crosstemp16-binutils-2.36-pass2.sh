@@ -1,12 +1,12 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" crosstemp &&
 
-if [ -d $LFS/sources/binutils-2.35.1 ]
+if [ -d $LFS/sources/binutils-2.36 ]
  then
-  rm -rf $LFS/sources/binutils-2.35.1
+  rm -rf $LFS/sources/binutils-2.36
 fi
-tar xf $LFS/sources/binutils-2.35.1.tar.xz -C $LFS/sources/ &&
-cd $LFS/sources/binutils-2.35.1 &&
+tar xf $LFS/sources/binutils-2.36.tar.xz -C $LFS/sources/ &&
+cd $LFS/sources/binutils-2.36 &&
 
 mkdir -v build &&
 cd build &&

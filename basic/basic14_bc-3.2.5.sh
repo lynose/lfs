@@ -1,15 +1,17 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" basic &&
-if test -d /sources/bc-3.2.4
+if test -d /sources/bc-3.2.5
  then
-  rm -rf /sources/bc-3.2.4
+  rm -rf /sources/bc-3.2.5
 fi
 
-tar -xJf /sources/bc-3.2.4.tar.xz -C /sources/ &&
+tar -xJf /sources/bc-3.2.5.tar.xz -C /sources/ &&
 
-cd /sources/bc-3.2.4 &&
+cd /sources/bc-3.2.5 &&
 
-PREFIX=/usr CC=gcc CFLAGS="-std=c99" ./configure.sh -G -O3 &&
+sed -i '612d' configure.sh&&
+
+PREFIX=/usr CC=gcc ./configure.sh -G -O3 &&
 ${log} `basename "$0"` " configured" basic &&
 
 make &&

@@ -1,13 +1,13 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" basic &&
-if test -d /sources/autoconf-2.70
+if test -d /sources/autoconf-2.71
  then
-  rm -rf /sources/autoconf-2.70
+  rm -rf /sources/autoconf-2.71
 fi
 
-tar xf /sources/autoconf-2.70.tar.xz -C /sources/ &&
+tar xf /sources/autoconf-2.71.tar.xz -C /sources/ &&
 
-cd /sources/autoconf-2.70 &&
+cd /sources/autoconf-2.71 &&
 
 ./configure --prefix=/usr &&
 ${log} `basename "$0"` " configured" basic &&

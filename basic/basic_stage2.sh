@@ -1,4 +1,9 @@
 ${log} `basename "$0"` " ======================================" basic &&
+${log} `basename "$0"`  "Global config" basic &&
+${log} `basename "$0"` " ======================================" basic &&
+export ENABLE_TEST=true
+
+${log} `basename "$0"` " ======================================" basic &&
 ./basic33_libtool-2.4.6.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic34_GDBM-1.19.sh &&
@@ -9,13 +14,13 @@ ${log} `basename "$0"` " ======================================" basic &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic37_inetutils-1.9.4.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic38_perl-5.32.0.sh &&
+./basic38_perl-5.32.1.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic39_XML-Parser-2.46.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic40_Intltool-0.51.0.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic41_autoconf-2.70.sh &&
+./basic41_autoconf-2.71.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic42_automake-1.16.3.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
@@ -67,7 +72,7 @@ ${log} `basename "$0"` " ======================================" basic &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic66_texinfo-6.7.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic67_vim-8.2.2253.sh &&
+./basic67_vim-8.2.2433.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic68_systemd-247.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
@@ -77,7 +82,7 @@ ${log} `basename "$0"` " ======================================" basic &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic71_util-linux-2.36.1.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic72_e2fsprogs-1.45.6.sh &&
+./basic72_e2fsprogs-1.46.0.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic73-backup_obj.sh
 

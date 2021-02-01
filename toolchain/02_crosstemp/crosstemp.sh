@@ -31,7 +31,7 @@ ${log} `basename "$0"` " ======================================" crosstemp &&
 ${log} `basename "$0"` " ======================================" crosstemp &&
 ./crosstemp15-xz-5.2.5.sh &&
 ${log} `basename "$0"` " ======================================" crosstemp &&
-./crosstemp16-binutils-2.35.1-pass2.sh &&
+./crosstemp16-binutils-2.36-pass2.sh &&
 ${log} `basename "$0"` " ======================================" crosstemp &&
 ./crosstemp17-gcc-10.2.0-pass2.sh &&
 ${log} `basename "$0"` " ======================================" crosstemp &&

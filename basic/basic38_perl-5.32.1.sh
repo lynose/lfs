@@ -1,13 +1,13 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" basic &&
-if test -d /sources/perl-5.32.0
+if test -d /sources/perl-5.32.1
  then
-  rm -rf /sources/perl-5.32.0
+  rm -rf /sources/perl-5.32.1
 fi
 
-tar xf /sources/perl-5.32.0.tar.xz -C /sources/ &&
+tar xf /sources/perl-5.32.1.tar.xz -C /sources/ &&
 
-cd /sources/perl-5.32.0 &&
+cd /sources/perl-5.32.1 &&
 
 export BUILD_ZLIB=False &&
 export BUILD_BZIP2=0 &&
@@ -18,7 +18,7 @@ sh Configure -des                                         \
              -Darchlib=/usr/lib/perl5/5.32/core_perl      \
              -Dsitelib=/usr/lib/perl5/5.32/site_perl      \
              -Dsitearch=/usr/lib/perl5/5.32/site_perl     \
-             -Dvendorlib=/usr/share/perl5/vendor_perl     \
+             -Dvendorlib=/usr/lib/perl5/5.32/vendor_perl  \
              -Dvendorarch=/usr/lib/perl5/5.32/vendor_perl \
              -Dman1dir=/usr/share/man/man1                \
              -Dman3dir=/usr/share/man/man3                \

@@ -5,7 +5,7 @@ ${log} `basename "$0"` " ======================================" roottools &&
 ${log} `basename "$0"` " ======================================" roottools &&
 ./roottools04-gettext-0.21.sh &&
 ${log} `basename "$0"` " ======================================" roottools &&
-./roottools05-bison-3.7.4.sh &&
+./roottools05-bison-3.7.5.sh &&
 ${log} `basename "$0"` " ======================================" roottools &&
 ./roottools06-perl-5.32.0.sh &&
 ${log} `basename "$0"` " ======================================" roottools &&

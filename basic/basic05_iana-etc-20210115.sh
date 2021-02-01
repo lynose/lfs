@@ -1,13 +1,13 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" basic &&
-if test -d /sources/iana-etc-20201229
+if test -d /sources/iana-etc-20210115
  then
-  rm -rf /sources/iana-etc-20201229
+  rm -rf /sources/iana-etc-20210115
 fi
 
-tar xf /sources/iana-etc-20201229.tar.gz -C /sources &&
+tar xf /sources/iana-etc-20210115.tar.gz -C /sources &&
 
-cd /sources/iana-etc-20201229 &&
+cd /sources/iana-etc-20210115 &&
 
 cp services protocols /etc &&
 ${log} `basename "$0"` " installed" basic &&

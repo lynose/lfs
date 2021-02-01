@@ -1,19 +1,19 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" basic &&
 
-if test -d /sources/libcap-2.46
+if test -d /sources/libcap-2.47
  then
-  rm -rf /sources/libcap-2.46
+  rm -rf /sources/libcap-2.47
 fi
 
-tar xf /sources/libcap-2.46.tar.xz -C /sources &&
+tar xf /sources/libcap-2.47.tar.xz -C /sources &&
 
-cd /sources/libcap-2.46 &&
+cd /sources/libcap-2.47 &&
 
 sed -i '/install -m.*STA/d' libcap/Makefile &&
 ${log} `basename "$0"` " configured" basic &&
 
-make lib=lib &&
+make prefix=/usr lib=lib &&
 ${log} `basename "$0"` " built" basic &&
 
 if [ ${ENABLE_TEST} == true ]
@@ -22,11 +22,11 @@ if [ ${ENABLE_TEST} == true ]
     ${log} `basename "$0"` " tested" basic
 fi
     
-make lib=lib PKGCONFIGDIR=/usr/lib/pkgconfig install &&
+make prefix=/usr lib=lib install
 for libname in cap psx; do
-    chmod -v 755 /lib/lib${libname}.so.2.46
-    rm -v /lib/lib${libname}.so
+    mv -v /usr/lib/lib${libname}.so.* /lib
     ln -sfv ../../lib/lib${libname}.so.2 /usr/lib/lib${libname}.so
+    chmod -v 755 /lib/lib${libname}.so.2.47
 done
 ${log} `basename "$0"` " installed" basic &&
 ${log} `basename "$0"` " finished" basic 
