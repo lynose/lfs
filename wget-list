@@ -3,7 +3,7 @@ http://download.savannah.gnu.org/releases/attr/attr-2.4.48.tar.gz
 http://ftp.gnu.org/gnu/autoconf/autoconf-2.71.tar.xz
 http://ftp.gnu.org/gnu/automake/automake-1.16.3.tar.xz
 http://ftp.gnu.org/gnu/bash/bash-5.1.tar.gz
-https://github.com/gavinhoward/bc/releases/download/3.2.5/bc-3.2.5.tar.xz
+https://github.com/gavinhoward/bc/releases/download/3.2.6/bc-3.2.6.tar.xz
 http://ftp.gnu.org/gnu/binutils/binutils-2.36.tar.xz
 http://ftp.gnu.org/gnu/bison/bison-3.7.5.tar.xz
 https://www.sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz
@@ -24,7 +24,7 @@ http://ftp.gnu.org/gnu/gawk/gawk-5.1.0.tar.xz
 http://ftp.gnu.org/gnu/gcc/gcc-10.2.0/gcc-10.2.0.tar.xz
 http://ftp.gnu.org/gnu/gdbm/gdbm-1.19.tar.gz
 http://ftp.gnu.org/gnu/gettext/gettext-0.21.tar.xz
-http://ftp.gnu.org/gnu/glibc/glibc-2.32.tar.xz
+http://ftp.gnu.org/gnu/glibc/glibc-2.33.tar.xz
 http://ftp.gnu.org/gnu/gmp/gmp-6.2.1.tar.xz
 http://ftp.gnu.org/gnu/gperf/gperf-3.1.tar.gz
 http://ftp.gnu.org/gnu/grep/grep-3.6.tar.xz
@@ -38,7 +38,7 @@ https://www.kernel.org/pub/linux/utils/net/iproute2/iproute2-5.10.0.tar.xz
 https://www.kernel.org/pub/linux/utils/kbd/kbd-2.4.0.tar.xz
 https://www.kernel.org/pub/linux/utils/kernel/kmod/kmod-28.tar.xz
 http://www.greenwoodsoftware.com/less/less-563.tar.gz
-http://www.linuxfromscratch.org/lfs/downloads/development/lfs-bootscripts-20210113.tar.xz
+http://www.linuxfromscratch.org/lfs/downloads/development/lfs-bootscripts-20210201.tar.xz
 https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-2.47.tar.xz
 https://sourceware.org/pub/libffi/libffi-3.3.tar.gz
 http://download.savannah.gnu.org/releases/libpipeline/libpipeline-1.5.3.tar.gz
@@ -82,7 +82,7 @@ https://zlib.net/zlib-1.2.11.tar.xz
 https://github.com/facebook/zstd/releases/download/v1.4.8/zstd-1.4.8.tar.gz
 http://www.linuxfromscratch.org/patches/lfs/development/bzip2-1.0.8-install_docs-1.patch
 http://www.linuxfromscratch.org/patches/lfs/development/coreutils-8.32-i18n-1.patch
-http://www.linuxfromscratch.org/patches/lfs/development/glibc-2.32-fhs-1.patch
+http://www.linuxfromscratch.org/patches/lfs/development/glibc-2.33-fhs-1.patch
 http://www.linuxfromscratch.org/patches/lfs/development/kbd-2.4.0-backspace-1.patch
 http://www.linuxfromscratch.org/patches/lfs/development/sysvinit-2.98-consolidated-1.patch
 http://www.linuxfromscratch.org/patches/lfs/development/systemd-247-upstream_fixes-1.patch

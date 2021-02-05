@@ -1,13 +1,13 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" crosstools &&
 
-if [ -d $LFS/sources/glibc-2.32 ]
+if [ -d $LFS/sources/glibc-2.33 ]
  then
-  rm -rf $LFS/sources/glibc-2.32
+  rm -rf $LFS/sources/glibc-2.33
 fi
 
-tar xf $LFS/sources/glibc-2.32.tar.xz -C $LFS/sources/ &&
-cd $LFS/sources/glibc-2.32 &&
+tar xf $LFS/sources/glibc-2.33.tar.xz -C $LFS/sources/ &&
+cd $LFS/sources/glibc-2.33 &&
 
 case $(uname -m) in
     i?86)   ln -sfv ld-linux.so.2 $LFS/lib/ld-lsb.so.3
@@ -17,12 +17,7 @@ case $(uname -m) in
     ;;
 esac
 
-patch -Np1 -i ../glibc-2.32-fhs-1.patch &&
-
-if [ -d build ]
- then
-  rm -rf build
-fi
+patch -Np1 -i ../glibc-2.33-fhs-1.patch &&
 
 mkdir -v build &&
 cd build &&

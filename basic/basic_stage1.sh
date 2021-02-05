@@ -10,33 +10,33 @@ ${log} `basename "$0"` " ======================================" basic &&
 
 ./basic01_man-pages-5.10.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic02_tcl-8.6.11.sh &&
+./basic02_iana-etc-20210115.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic03_expect-5.45.4.sh &&
+./basic03_glibc-2.33.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic04_dejagnu-1.6.2.sh &&
+./basic04_zlib-1.2.11.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic05_iana-etc-20210115.sh &&
+./basic05_bzip2-1.0.8.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic06_glibc-2.32.sh &&
+./basic06_xz-5.2.5.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic07_zlib-1.2.11.sh &&
+./basic07_zstd-1.4.8.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic08_bzip2-1.0.8.sh &&
+./basic08_file-5.39.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic09_xz-5.2.5.sh &&
+./basic09_readline-8.1.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic10_zstd-1.4.8.sh &&
+./basic10_m4-1.4.18.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic11_file-5.39.sh &&
+./basic11_bc-3.2.6.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic12_readline-8.1.sh &&
+./basic12_flex-2.6.4.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic13_m4-1.4.18.sh &&
+./basic13_tcl-8.6.11.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic14_bc-3.2.5.sh &&
+./basic14_expect-5.45.4.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic15_flex-2.6.4.sh &&
+./basic15_dejagnu-1.6.2.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic16_binutils-2.36.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
