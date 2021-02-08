@@ -1,13 +1,13 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" crosstools &&
 
-if [ -d $LFS/sources/binutils-2.36 ]
+if [ -d $LFS/sources/binutils-2.36.1 ]
  then
-  rm -rf $LFS/sources/binutils-2.36
+  rm -rf $LFS/sources/binutils-2.36.1
 fi
 
-tar xf $LFS/sources/binutils-2.36.tar.xz -C $LFS/sources/ &&
-cd $LFS/sources/binutils-2.36 &&
+tar xf $LFS/sources/binutils-2.36.1.tar.xz -C $LFS/sources/ &&
+cd $LFS/sources/binutils-2.36.1 &&
 
 mkdir -v build &&
 cd build &&

@@ -1,11 +1,11 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" basic &&
-if test -d /sources/inetutils-1.9.4
+if test -d /sources/inetutils-2.0
  then
-  rm -rf /sources/inetutils-1.9.4
+  rm -rf /sources/inetutils-2.0
 fi
-tar xf /sources/inetutils-1.9.4.tar.xz -C /sources/ &&
-cd /sources/inetutils-1.9.4 &&
+tar xf /sources/inetutils-2.0.tar.xz -C /sources/ &&
+cd /sources/inetutils-2.0 &&
 
 ./configure --prefix=/usr        \
             --localstatedir=/var \
@@ -21,8 +21,12 @@ ${log} `basename "$0"` " configured" basic &&
 make &&
 ${log} `basename "$0"` " built" basic &&
 
-make check -j1 &&
-${log} `basename "$0"` " checked" basic &&
+if [ ${ENABLE_TEST} == true ]
+ then
+  make check &&
+  ${log} `basename "$0"` " check succeed" blfs_all ||
+  ${log} `basename "$0"` " expected check fail?" blfs_all
+fi
 
 make install &&
 mv -v /usr/bin/{hostname,ping,ping6,traceroute} /bin &&

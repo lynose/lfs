@@ -1,14 +1,14 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" basic &&
 
-if test -d /sources/binutils-2.36
+if test -d /sources/binutils-2.36.1
  then
-  rm -rf /sources/binutils-2.36
+  rm -rf /sources/binutils-2.36.1
 fi
 
-tar -xJf /sources/binutils-2.36.tar.xz -C /sources &&
+tar -xJf /sources/binutils-2.36.1.tar.xz -C /sources &&
 
-cd /sources/binutils-2.36 &&
+cd /sources/binutils-2.36.1 &&
 
 expect -c "spawn ls" > /root/spawn.log &&
 
@@ -39,5 +39,6 @@ if [ ${ENABLE_TEST} == true ]
 fi
 
 make tooldir=/usr install &&
+rm -fv /usr/lib/lib{bfd,ctf,ctf-nobfd,opcodes}.a &&
 ${log} `basename "$0"` " installed" basic &&
 ${log} `basename "$0"` " finished" basic 
