@@ -1,18 +1,18 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" basic &&
-if test -d /sources/util-linux-2.36.1
+if test -d /sources/util-linux-2.36.2
  then
-  rm -rf /sources/util-linux-2.36.1
+  rm -rf /sources/util-linux-2.36.2
 fi
 
-tar xf /sources/util-linux-2.36.1.tar.xz -C /sources/ &&
+tar xf /sources/util-linux-2.36.2.tar.xz -C /sources/ &&
 
-cd /sources/util-linux-2.36.1 &&
+cd /sources/util-linux-2.36.2 &&
 
 mkdir -pv /var/lib/hwclock &&
 
 ./configure ADJTIME_PATH=/var/lib/hwclock/adjtime   \
-            --docdir=/usr/share/doc/util-linux-2.36.1 \
+            --docdir=/usr/share/doc/util-linux-2.36.2 \
             --disable-chfn-chsh  \
             --disable-login      \
             --disable-nologin    \
@@ -21,7 +21,8 @@ mkdir -pv /var/lib/hwclock &&
             --disable-runuser    \
             --disable-pylibmount \
             --disable-static     \
-            --without-python  &&
+            --without-python     \
+            --runstatedir=/run  &&
 ${log} `basename "$0"` " configured" basic &&
 
 make &&

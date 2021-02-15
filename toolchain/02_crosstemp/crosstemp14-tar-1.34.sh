@@ -1,12 +1,12 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" crosstemp &&
 
-if [ -d $LFS/sources/tar-1.33 ]
+if [ -d $LFS/sources/tar-1.34 ]
  then
-  rm -rf $LFS/sources/tar-1.33
+  rm -rf $LFS/sources/tar-1.34
 fi
-tar xf $LFS/sources/tar-1.33.tar.xz -C $LFS/sources/ &&
-cd $LFS/sources/tar-1.33 &&
+tar xf $LFS/sources/tar-1.34.tar.xz -C $LFS/sources/ &&
+cd $LFS/sources/tar-1.34 &&
 
 
 ./configure --prefix=/usr                     \

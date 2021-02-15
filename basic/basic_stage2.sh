@@ -26,7 +26,7 @@ ${log} `basename "$0"` " ======================================" basic &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic43_kmod-28.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic44_libelf-0.182.sh &&
+./basic44_libelf-0.183.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic45_libffi-3.3.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
@@ -66,9 +66,9 @@ ${log} `basename "$0"` " ======================================" basic &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic63-patch-2.7.6.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic64_man-db-2.9.3.sh &&
+./basic64_man-db-2.9.4.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic65_tar-1.33.sh &&
+./basic65_tar-1.34.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic66_texinfo-6.7.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
@@ -78,11 +78,11 @@ ${log} `basename "$0"` " ======================================" basic &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic69_dbus-1.12.20.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic70_procps-ng-3.3.16.sh &&
+./basic70_procps-ng-3.3.17.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic71_util-linux-2.36.1.sh &&
+./basic71_util-linux-2.36.2.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic72_e2fsprogs-1.46.0.sh &&
+./basic72_e2fsprogs-1.46.1.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic73-backup_obj.sh
 

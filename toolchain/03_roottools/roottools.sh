@@ -13,7 +13,7 @@ ${log} `basename "$0"` " ======================================" roottools &&
 ${log} `basename "$0"` " ======================================" roottools &&
 ./roottools08-texinfo-6.7.sh &&
 ${log} `basename "$0"` " ======================================" roottools &&
-./roottools09-util-linux-2.36.1.sh &&
+./roottools09-util-linux-2.36.2.sh &&
 ${log} `basename "$0"` " ======================================" roottools &&
 ${log} `basename "$0"` " Stripping" roottools &&
 ${log} `basename "$0"` " ======================================" roottools &&

@@ -1,11 +1,11 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" basic &&
-if test -d /sources/psmisc-23.3
+if test -d /sources/psmisc-23.4
  then
-  rm -rf /sources/psmisc-23.3
+  rm -rf /sources/psmisc-23.4
 fi
-tar -xJf /sources/psmisc-23.3.tar.xz -C /sources/ &&
-cd /sources/psmisc-23.3 &&
+tar -xJf /sources/psmisc-23.4.tar.xz -C /sources/ &&
+cd /sources/psmisc-23.4 &&
 
 ./configure --prefix=/usr &&
 ${log} `basename "$0"` " configured" basic &&

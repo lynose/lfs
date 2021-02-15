@@ -1,18 +1,18 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" basic &&
-if test -d /sources/procps-ng-3.3.16
+if test -d /sources/procps-3.3.17
  then
-  rm -rf /sources/procps-ng-3.3.16
+  rm -rf /sources/ procps-3.3.17
 fi
 
-tar xf /sources/procps-ng-3.3.16.tar.xz -C /sources/ &&
+tar xf /sources/procps-ng-3.3.17.tar.xz -C /sources/ &&
 
-cd /sources/procps-ng-3.3.16 &&
+cd /sources/ procps-3.3.17 &&
 
 ./configure --prefix=/usr                            \
             --exec-prefix=                           \
             --libdir=/usr/lib                        \
-            --docdir=/usr/share/doc/procps-ng-3.3.16 \
+            --docdir=/usr/share/doc/procps-ng-3.3.17 \
             --disable-static                         \
             --disable-kill                           \
             --with-systemd &&
@@ -22,7 +22,7 @@ make &&
 ${log} `basename "$0"` " built" basic &&
 
 make check &&
-${log} `basename "$0"` "unexpected check succeed" basic
+${log} `basename "$0"` "check succeed" basic ||
 ${log} `basename "$0"` "expected check fail?" basic
 
 make install &&

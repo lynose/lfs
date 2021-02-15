@@ -1,11 +1,11 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" basic &&
-if test -d /sources/e2fsprogs-1.46.0
+if test -d /sources/e2fsprogs-1.46.1
  then
-  rm -rf /sources/e2fsprogs-1.46.0
+  rm -rf /sources/e2fsprogs-1.46.1
 fi
-tar xf /sources/e2fsprogs-1.46.0.tar.gz -C /sources/ &&
-cd /sources/e2fsprogs-1.46.0 &&
+tar xf /sources/e2fsprogs-1.46.1.tar.gz -C /sources/ &&
+cd /sources/e2fsprogs-1.46.1 &&
 
 mkdir -v build &&
 cd build &&

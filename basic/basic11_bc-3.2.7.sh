@@ -1,13 +1,13 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" basic &&
-if test -d /sources/bc-3.2.5
+if test -d /sources/bc-3.2.7
  then
-  rm -rf /sources/bc-3.2.5
+  rm -rf /sources/bc-3.2.7
 fi
 
-tar -xJf /sources/bc-3.2.5.tar.xz -C /sources/ &&
+tar -xJf /sources/bc-3.2.7.tar.xz -C /sources/ &&
 
-cd /sources/bc-3.2.5 &&
+cd /sources/bc-3.2.7 &&
 
 PREFIX=/usr CC=gcc ./configure.sh -G -O3 &&
 ${log} `basename "$0"` " configured" basic &&

@@ -1,12 +1,12 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" basic &&
-if test -d /sources/tar-1.33
+if test -d /sources/tar-1.34
  then
-  rm -rf /sources/tar-1.33
+  rm -rf /sources/tar-1.34
 fi
-tar xf /sources/tar-1.33.tar.xz -C /sources/ &&
+tar xf /sources/tar-1.34.tar.xz -C /sources/ &&
 
-cd /sources/tar-1.33 &&
+cd /sources/tar-1.34 &&
 
 FORCE_UNSAFE_CONFIGURE=1  \
 ./configure --prefix=/usr \
@@ -22,7 +22,7 @@ ${log} `basename "$0"` " checked" basic &&
 
 
 make install &&
-make -C doc install-html docdir=/usr/share/doc/tar-1.33 &&
+make -C doc install-html docdir=/usr/share/doc/tar-1.34 &&
 ${log} `basename "$0"` " installed" basic &&
 ${log} `basename "$0"` " finished" basic 
 
