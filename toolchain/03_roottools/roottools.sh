@@ -7,7 +7,7 @@ ${log} `basename "$0"` " ======================================" roottools &&
 ${log} `basename "$0"` " ======================================" roottools &&
 ./roottools05-bison-3.7.5.sh &&
 ${log} `basename "$0"` " ======================================" roottools &&
-./roottools06-perl-5.32.0.sh &&
+./roottools06-perl-5.32.1.sh &&
 ${log} `basename "$0"` " ======================================" roottools &&
 ./roottools07-python-3.9.2.sh &&
 ${log} `basename "$0"` " ======================================" roottools &&
