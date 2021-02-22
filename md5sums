@@ -46,7 +46,7 @@ dad443d0911cf9f0f1bd90a334bc9004  libpipeline-1.5.3.tar.gz
 fc7a67ea86ace13195b0bce683fd4469  make-4.3.tar.gz
 6e233a555f7b9ae91ce7cd0faa322bce  man-db-2.9.4.tar.xz
 4ae3f74a1beddd919936e1058642644c  man-pages-5.10.tar.xz
-6dab36fcd89067897d2afa857a494752  meson-0.57.0.tar.gz
+fbd744560351491892478a36a1586815  meson-0.57.1.tar.gz
 9f16c976c25bb0f76b50be749cd7a3a8  mpc-1.2.1.tar.gz
 bdd3d5efba9c17da8d83a35ec552baef  mpfr-4.1.0.tar.xz
 e812da327b1c2214ac1aed440ea3ae8d  ncurses-6.2.tar.gz
@@ -57,8 +57,8 @@ cccaa064ed860a2b4d1303811bf5c682  openssl-1.1.1j.tar.gz
 f6e931e319531b736fadc017f470e68a  pkg-config-0.29.2.tar.gz
 d60613e88c2f442ebd462b5a75313d56  procps-ng-3.3.17.tar.xz
 8114cd4489b95308efe2509c3a406bbf  psmisc-23.4.tar.xz
-61981498e75ac8f00adcb908281fadb6  Python-3.9.1.tar.xz
-89fd591994e303186c349014b8f9e0fd  python-3.9.1-docs-html.tar.bz2
+f0dc9000312abeb16de4eccce9a870ab  Python-3.9.2.tar.xz
+719cd64a4c5768b646b716df20229400  python-3.9.2-docs-html.tar.bz2
 e9557dd5b1409f5d7b37ef717c64518e  readline-8.1.tar.gz
 6d906edfdb3202304059233f51f9a71d  sed-4.8.tar.xz
 4b05eff8a427cf50e615bda324b5bc45  shadow-4.8.1.tar.xz
