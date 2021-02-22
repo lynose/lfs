@@ -21,7 +21,7 @@ mkdir -pv /var/lib/hwclock &&
             --disable-pylibmount \
             --disable-static     \
             --without-python     \
-            --runstatedir=/run   &&
+            runstatedir=/run   &&
 ${log} `basename "$0"` " configured" roottools &&
 
 make &&
