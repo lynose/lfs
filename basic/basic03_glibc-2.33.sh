@@ -10,6 +10,8 @@ cd /sources/glibc-2.33 &&
 
 patch -Np1 -i ../glibc-2.33-fhs-1.patch &&
 
+sed -e '402a\      *result = local->data.services[database_index];' \
+    -i nss/nss_database.c &&
 
 mkdir -v build &&
 cd build &&

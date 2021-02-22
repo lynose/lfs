@@ -30,13 +30,13 @@ ${log} `basename "$0"` " ======================================" basic &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic45_libffi-3.3.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic46_openssl-1.1.1i.sh &&
+./basic46_openssl-1.1.1j.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic47_python-3.9.1.sh &&
+./basic47_python-3.9.2.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic48_ninja-1.10.2.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic49-meson-0.56.2.sh &&
+./basic49-meson-0.57.1.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic50_coreutils-8.32.sh &&
 ${log} `basename "$0"` " ======================================" basic &&

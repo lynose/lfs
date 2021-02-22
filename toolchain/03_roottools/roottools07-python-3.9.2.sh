@@ -1,12 +1,12 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" roottools &&
 
-if test -d /sources/Python-3.9.1
+if test -d /sources/Python-3.9.2
  then
-  rm -rf /sources/Python-3.9.1
+  rm -rf /sources/Python-3.9.2
 fi
-tar -xJf /sources/Python-3.9.1.tar.xz -C /sources/ &&
-cd /sources/Python-3.9.1 &&
+tar -xJf /sources/Python-3.9.2.tar.xz -C /sources/ &&
+cd /sources/Python-3.9.2 &&
 
 
 ./configure --prefix=/usr   \
