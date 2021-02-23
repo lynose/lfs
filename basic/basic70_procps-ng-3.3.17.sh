@@ -2,12 +2,12 @@
 ${log} `basename "$0"` " started" basic &&
 if test -d /sources/procps-3.3.17
  then
-  rm -rf /sources/ procps-3.3.17
+  rm -rf /sources/procps-3.3.17
 fi
 
 tar xf /sources/procps-ng-3.3.17.tar.xz -C /sources/ &&
 
-cd /sources/ procps-3.3.17 &&
+cd /sources/procps-3.3.17 &&
 
 ./configure --prefix=/usr                            \
             --exec-prefix=                           \

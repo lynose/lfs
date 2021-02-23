@@ -1,13 +1,13 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" basic &&
-if test -d /sources/vim-8.2.2253
+if test -d /sources/vim-8.2.2433
  then
-  rm -rf /sources/vim-8.2.2253
+  rm -rf /sources/vim-8.2.2433
 fi
 
-tar xf /sources/vim-8.2.2253.tar.gz -C /sources/ &&
+tar xf /sources/vim-8.2.2433.tar.gz -C /sources/ &&
 
-cd /sources/vim-8.2.2253 &&
+cd /sources/vim-8.2.2433 &&
 
 echo '#define SYS_VIMRC_FILE "/etc/vimrc"' >> src/feature.h &&
 ./configure --prefix=/usr &&
@@ -30,10 +30,10 @@ for L in  /usr/share/man/{,*/}man1/vim.1; do
 done
 
 cd /usr/share/vim &&
-ln -sv ../vim/vim82/doc /usr/share/doc/vim-8.2.2253 &&
+ln -sv ../vim/vim82/doc /usr/share/doc/vim-8.2.2433 &&
 ${log} `basename "$0"` " installed" basic &&
 
-cat > /etc/vimrc << "EOF"
+cat > /etc/vimrc << "EOF" &&
 " Begin /etc/vimrc
 
 " Ensure defaults are set before customizing settings, not after
