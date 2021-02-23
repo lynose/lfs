@@ -16,11 +16,10 @@ ${log} `basename "$0"` " configured" basic &&
 make prefix=/usr lib=lib &&
 ${log} `basename "$0"` " built" basic &&
 
-if [ ${ENABLE_TEST} == true ]
- then
-    make test &&
-    ${log} `basename "$0"` " tested" basic
-fi
+
+make test &&
+${log} `basename "$0"` " tested" basic
+
     
 make prefix=/usr lib=lib install
 for libname in cap psx; do

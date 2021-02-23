@@ -30,13 +30,11 @@ ${log} `basename "$0"` " configured" basic &&
 make tooldir=/usr &&
 ${log} `basename "$0"` " built" basic &&
 
-if [ ${ENABLE_TEST} == true ]
- then
-  #critical section
-  make -k check &&
-  ${log} `basename "$0"` " check succeed" blfs_all ||
-  ${log} `basename "$0"` " critical check fail?" blfs_all
-fi
+
+#critical section
+make -k check &&
+${log} `basename "$0"` " check succeed" blfs_all ||
+${log} `basename "$0"` " critical check fail?" blfs_all
 
 make tooldir=/usr install &&
 rm -fv /usr/lib/lib{bfd,ctf,ctf-nobfd,opcodes}.a &&

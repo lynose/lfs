@@ -27,12 +27,11 @@ ${log} `basename "$0"` " configured" basic &&
 
 make &&
 ${log} `basename "$0"` " built" basic &&
-if [ ${ENABLE_TEST} == true ]
- then
-  chown -Rv tester . &&
-  ${log} `basename "$0"` " unexpected check succeed" basic
-  ${log} `basename "$0"` " expected check fail?" basicsu tester -c "make -k check"
-fi
+
+chown -Rv tester . &&
+${log} `basename "$0"` " unexpected check succeed" basic
+${log} `basename "$0"` " expected check fail?" basicsu tester -c "make -k check"
+
 
 make install &&
 ${log} `basename "$0"` " installed" basic &&

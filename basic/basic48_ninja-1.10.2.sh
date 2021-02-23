@@ -19,13 +19,11 @@ sed -i '/int Guess/a \
 python3 configure.py --bootstrap &&
 ${log} `basename "$0"` " configured and built" basic &&
 
-if [ ${ENABLE_TEST} == true ]
- then
-  ./ninja ninja_test &&
-  ./ninja_test --gtest_filter=-SubprocessTest.SetWithLots &&
-  ${log} `basename "$0"` " check succeed" blfs_all ||
-  ${log} `basename "$0"` " expected check fail?" blfs_all
-fi
+./ninja ninja_test &&
+./ninja_test --gtest_filter=-SubprocessTest.SetWithLots &&
+${log} `basename "$0"` " check succeed" blfs_all ||
+${log} `basename "$0"` " !!!check failed!!!" blfs_all
+
 
 install -vm755 ninja /usr/bin/ &&
 install -vDm644 misc/bash-completion /usr/share/bash-completion/completions/ninja &&

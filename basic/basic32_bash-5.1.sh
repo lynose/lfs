@@ -20,14 +20,12 @@ ${log} `basename "$0"` " configured" basic &&
 make &&
 ${log} `basename "$0"` " built" basic &&
 
-if [ ${ENABLE_TEST} == true ]
- then
-    chown -Rv tester . &&
-    su tester << EOF
+
+chown -Rv tester . &&
+
+su tester << EOF
 PATH=$PATH make tests < $(tty)
 EOF
-    ${log} `basename "$0"` " check with unkown results" basic
-fi
 
 make install &&
 mv -vf /usr/bin/bash /bin &&

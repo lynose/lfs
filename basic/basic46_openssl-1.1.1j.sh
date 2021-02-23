@@ -19,12 +19,10 @@ ${log} `basename "$0"` " configured" basic &&
 make &&
 ${log} `basename "$0"` " built" basic &&
 
-if [ ${ENABLE_TEST} == true ]
- then
-    make test &&
-    ${log} `basename "$0"` " unexpected check succeed" basic
-    ${log} `basename "$0"` " expected check failed?" basic
-fi
+make test &&
+${log} `basename "$0"` " check succeed" basic ||
+${log} `basename "$0"` " check failed!!!" basic
+
 
 sed -i '/INSTALL_LIBS/s/libcrypto.a libssl.a//' Makefile &&
 make MANSUFFIX=ssl install &&

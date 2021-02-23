@@ -17,5 +17,6 @@ ${log} `basename "$0"` " ======================================" roottools &&
 ${log} `basename "$0"` " ======================================" roottools &&
 ${log} `basename "$0"` " Stripping" roottools &&
 ${log} `basename "$0"` " ======================================" roottools &&
-find /usr/{lib,libexec} -name \*.la -delete
+find /usr/{lib,libexec} -name \*.la -delete &&
+rm -rf /usr/share/{info,man,doc}/* &&
 ${log} `basename "$0"` " Finished roottools build" roottools

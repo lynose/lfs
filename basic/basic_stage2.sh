@@ -1,7 +1,6 @@
 ${log} `basename "$0"` " ======================================" basic &&
 ${log} `basename "$0"`  "Global config" basic &&
 ${log} `basename "$0"` " ======================================" basic &&
-export ENABLE_TEST=true
 
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic33_libtool-2.4.6.sh &&

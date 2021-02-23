@@ -13,13 +13,11 @@ ${log} `basename "$0"` " configured" basic &&
 
 make &&
 ${log} `basename "$0"` " built" basic &&
-if [ ${ENABLE_TEST} == true ]
- then
-    make check &&   # Multi Thread fails in first run, possible race condition
-    ${log} `basename "$0"` " checked" basic
-    ${log} `basename "$0"` " unknown result documented" basic
-    #make check          # Would work in the second run
-fi
+
+make check &&   # Multi Thread fails in first run, possible race condition
+${log} `basename "$0"` " checke successful" basic | 
+${log} `basename "$0"` " check failed" basic
+
 make install &&
 ${log} `basename "$0"` " installed" basic &&
 ${log} `basename "$0"` " finished" basic 

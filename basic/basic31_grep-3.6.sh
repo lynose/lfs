@@ -13,11 +13,9 @@ ${log} `basename "$0"` " configured" basic &&
 make &&
 ${log} `basename "$0"` " built" basic &&
 
-if [ ${ENABLE_TEST} == true ]
- then
-    make check &&
-    ${log} `basename "$0"` " checked" basic
-fi
+make check &&
+${log} `basename "$0"` " checked" basic
+
 
 make install &&
 ${log} `basename "$0"` " installed" basic &&

@@ -19,12 +19,8 @@ ${log} `basename "$0"` " built" basic &&
 
 make html &&
 
-${log} `basename "$0"` " built doc" basic &&
-if [ ${ENABLE_TEST} == true ]
- then
-    make check &&
-    ${log} `basename "$0"` " checked" basic
-fi
+make check &&
+${log} `basename "$0"` " checked" basic
 
 make install &&
 make install-html &&

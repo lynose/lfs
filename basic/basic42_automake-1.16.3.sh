@@ -14,12 +14,11 @@ ${log} `basename "$0"` " configured" basic &&
 
 make &&
 ${log} `basename "$0"` " built" basic &&
-if [ ${ENABLE_TEST} == true ]
- then
-  make -j4 check &&
-  ${log} `basename "$0"` " unexpected test succeed" basic
-  ${log} `basename "$0"` " expected test fail?" basic
-fi
+
+make -j4 check &&
+${log} `basename "$0"` " test succeed" basic ||
+${log} `basename "$0"` " !!!test failed!!!" basic
+
 make install &&
 ${log} `basename "$0"` " installed" basic &&
 ${log} `basename "$0"` " finished" basic 

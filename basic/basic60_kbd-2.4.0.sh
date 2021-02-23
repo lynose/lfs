@@ -18,11 +18,10 @@ ${log} `basename "$0"` " configured" basic &&
 make &&
 ${log} `basename "$0"` " built" basic &&
 
-if [ ${ENABLE_TEST} == true ]
- then
-    make check &&
-    ${log} `basename "$0"` " checked" basic
-fi
+
+make check &&
+${log} `basename "$0"` " checked" basic
+
 
 make install &&
 mkdir -v       /usr/share/doc/kbd-2.4.0 &&

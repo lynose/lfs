@@ -15,14 +15,13 @@ ${log} `basename "$0"` " configured" basic &&
 
 make &&
 ${log} `basename "$0"` " built" basic &&
-if [ ${ENABLE_TEST} == true ]
-  then
-    chown -Rv tester . &&
 
-    su tester -c "LANG=en_US.UTF-8 make -j1 test" &> /log/vim-test.log &&
-    ${log} `basename "$0"` " unexpected test succeed" basic
-    ${log} `basename "$0"` " expected test fail?" basic
-fi
+chown -Rv tester . &&
+
+su tester -c "LANG=en_US.UTF-8 make -j1 test" &> /log/vim-test.log &&
+${log} `basename "$0"` " unexpected test succeed" basic
+${log} `basename "$0"` " expected test fail?" basic
+
 
 make install &&
 ln -sv vim /usr/bin/vi &&
