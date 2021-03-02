@@ -25,4 +25,6 @@ mv -v   /usr/bin/{lzma,unlzma,lzcat,xz,unxz,xzcat} /bin &&
 mv -v /usr/lib/liblzma.so.* /lib &&
 ln -svf ../../lib/$(readlink /usr/lib/liblzma.so) /usr/lib/liblzma.so &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/xz-5.2.5 &&
 ${log} `basename "$0"` " finished" basic 

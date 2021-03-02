@@ -29,5 +29,7 @@ make install &&
 mv -v /usr/lib/libprocps.so.* /lib &&
 ln -sfv ../../lib/$(readlink /usr/lib/libprocps.so) /usr/lib/libprocps.so &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/procps-3.3.17 &&
 ${log} `basename "$0"` " finished" basic 
 

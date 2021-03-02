@@ -30,4 +30,6 @@ ${log} `basename "$0"` " checked" basic &&
 make install &&
 make install-html &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/gmp-6.2.1 &&
 ${log} `basename "$0"` " finished" basic 

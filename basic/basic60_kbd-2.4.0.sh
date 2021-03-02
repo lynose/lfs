@@ -27,4 +27,6 @@ make install &&
 mkdir -v       /usr/share/doc/kbd-2.4.0 &&
 cp -R -v docs/doc/* /usr/share/doc/kbd-2.4.0 &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/kbd-2.4.0 &&
 ${log} `basename "$0"` " finished" basic 

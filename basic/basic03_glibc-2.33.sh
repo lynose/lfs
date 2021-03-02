@@ -99,4 +99,6 @@ include /etc/ld.so.conf.d/*.conf
 EOF
 mkdir -pv /etc/ld.so.conf.d &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/glibc-2.33 &&
 ${log} `basename "$0"` " finished" basic 

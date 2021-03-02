@@ -28,5 +28,7 @@ for target in depmod insmod lsmod modinfo modprobe rmmod; do
 done
 ln -sfv kmod /bin/lsmod &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/kmod-28 &&
 ${log} `basename "$0"` " finished" basic 
 

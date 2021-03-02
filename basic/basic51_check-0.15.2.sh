@@ -20,4 +20,6 @@ ${log} `basename "$0"` " checked" basic &&
 make docdir=/usr/share/doc/check-0.15.2 install &&
 sed -i '1 s/tools/usr/' /usr/bin/checkmk &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/check-0.15.2 &&
 ${log} `basename "$0"` " finished" basic 

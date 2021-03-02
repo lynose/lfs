@@ -29,4 +29,6 @@ rm -v /usr/bin/{bunzip2,bzcat,bzip2} &&
 ln -sv bzip2 /bin/bunzip2 &&
 ln -sv bzip2 /bin/bzcat &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/bzip2-1.0.8 &&
 ${log} `basename "$0"` " finished" basic 

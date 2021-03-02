@@ -50,4 +50,6 @@ endif
 
 " End /etc/vimrc
 EOF
+
+rm -rf /sources/vim-8.2.2433 &&
 ${log} `basename "$0"` " finished" basic 

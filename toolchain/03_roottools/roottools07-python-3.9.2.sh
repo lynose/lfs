@@ -19,4 +19,6 @@ ${log} `basename "$0"` " build" roottools &&
 
 make install &&
 ${log} `basename "$0"` " installed" roottools &&
+
+rm -rf /sources/Python-3.9.2 &&
 ${log} `basename "$0"` " finished" roottools

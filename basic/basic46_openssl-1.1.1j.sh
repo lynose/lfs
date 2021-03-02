@@ -32,4 +32,6 @@ mv -v /usr/share/doc/openssl /usr/share/doc/openssl-1.1.1j &&
 cp -vfr doc/* /usr/share/doc/openssl-1.1.1j &&
 
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/openssl-1.1.1j &&
 ${log} `basename "$0"` " finished" basic 

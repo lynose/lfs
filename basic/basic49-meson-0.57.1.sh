@@ -15,5 +15,7 @@ ${log} `basename "$0"` " built" basic &&
 python3 setup.py install --root=dest &&
 cp -rv dest/* / &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/meson-0.57.1 &&
 ${log} `basename "$0"` " finished" basic 
 

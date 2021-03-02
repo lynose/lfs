@@ -20,7 +20,7 @@ ${log} `basename "$0"` " installed" basic &&
 
 make check &&
 ${log} `basename "$0"` " check succeed" blfs_all ||
-${log} `basename "$0"` " expected check fail?" blfs_all
+${log} `basename "$0"` " check failed!" blfs_all
 
-
+rm -rf /sources/dejagnu-1.6.2 &&
 ${log} `basename "$0"` " finished" basic

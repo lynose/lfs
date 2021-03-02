@@ -23,4 +23,6 @@ ${log} `basename "$0"` " checked" basic
 
 make install &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/gdbm-1.19 &&
 ${log} `basename "$0"` " finished" basic 

@@ -27,6 +27,8 @@ make -C libelf install &&
 install -vm644 config/libelf.pc /usr/lib/pkgconfig &&
 rm /lib/libelf.a &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/elfutils-0.183 &&
 ${log} `basename "$0"` " finished" basic 
 
 

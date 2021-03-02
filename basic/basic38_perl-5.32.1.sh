@@ -37,4 +37,6 @@ ${log} `basename "$0"` " expected test failed" basic
 make install &&
 unset BUILD_ZLIB BUILD_BZIP2 &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/perl-5.32.1 &&
 ${log} `basename "$0"` " finished" basic 

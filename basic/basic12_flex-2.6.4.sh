@@ -19,5 +19,7 @@ ${log} `basename "$0"` " checked" basic &&
 make install &&
 ln -sv flex /usr/bin/lex &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/flex-2.6.4 &&
 ${log} `basename "$0"` " finished" basic 
 

@@ -11,4 +11,6 @@ cd /sources/iana-etc-20210202 &&
 
 cp services protocols /etc &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/iana-etc-20210202 &&
 ${log} `basename "$0"` " finished" basic 

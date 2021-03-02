@@ -18,4 +18,6 @@ ${log} `basename "$0"` " build" roottools &&
 
 make install &&
 ${log} `basename "$0"` " installed" roottools &&
+
+rm -rf /sources/bison-3.7.5
 ${log} `basename "$0"` " finished" roottools

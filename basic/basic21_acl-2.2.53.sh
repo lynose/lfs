@@ -22,4 +22,6 @@ make install &&
 mv -v /usr/lib/libacl.so.* /lib &&
 ln -sfv ../../lib/$(readlink /usr/lib/libacl.so) /usr/lib/libacl.so &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/acl-2.2.53
 ${log} `basename "$0"` " finished" basic 

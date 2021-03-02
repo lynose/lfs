@@ -22,5 +22,7 @@ ${log} `basename "$0"` " expected check fail?" basic
 make install &&
 mv -v /usr/bin/gzip /bin &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/gzip-1.10 &&
 ${log} `basename "$0"` " finished" basic 
 

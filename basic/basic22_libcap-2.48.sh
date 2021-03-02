@@ -28,4 +28,6 @@ for libname in cap psx; do
     chmod -v 755 /lib/lib${libname}.so.2.48
 done
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/libcap-2.48 &&
 ${log} `basename "$0"` " finished" basic 

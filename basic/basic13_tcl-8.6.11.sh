@@ -47,5 +47,7 @@ make install-private-headers &&
 ln -sfv tclsh8.6 /usr/bin/tclsh &&
 mv /usr/share/man/man3/{Thread,Tcl_Thread}.3 &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/tcl8.6.11 &&
 ${log} `basename "$0"` " finished" basic
 

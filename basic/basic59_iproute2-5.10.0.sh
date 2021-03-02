@@ -19,4 +19,6 @@ ${log} `basename "$0"` " built" basic &&
 
 make DOCDIR=/usr/share/doc/iproute2-5.10.0 install &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/iproute2-5.10.0 &&
 ${log} `basename "$0"` " finished" basic 

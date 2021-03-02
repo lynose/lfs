@@ -25,4 +25,6 @@ ${log} `basename "$0"` " build" roottools &&
 
 make install &&
 ${log} `basename "$0"` " installed" roottools &&
+
+rm -rf /sources/perl-5.32.1 &&
 ${log} `basename "$0"` " finished" roottools

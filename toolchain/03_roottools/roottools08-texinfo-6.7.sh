@@ -16,5 +16,7 @@ ${log} `basename "$0"` " build" roottools &&
 
 make install &&
 ${log} `basename "$0"` " installed" roottools &&
+
+rm -rf /sources/texinfo-6.7 &&
 ${log} `basename "$0"` " finished" roottools
 

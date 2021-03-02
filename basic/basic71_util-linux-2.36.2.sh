@@ -35,4 +35,6 @@ ${log} `basename "$0"` " expected check fail?" basicsu tester -c "make -k check"
 
 make install &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/util-linux-2.36.2 &&
 ${log} `basename "$0"` " finished" basic 

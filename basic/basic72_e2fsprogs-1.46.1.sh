@@ -35,4 +35,6 @@ makeinfo -o      doc/com_err.info ../lib/et/com_err.texinfo &&
 install -v -m644 doc/com_err.info /usr/share/info &&
 install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/e2fsprogs-1.46.1 &&
 ${log} `basename "$0"` " finished" basic 

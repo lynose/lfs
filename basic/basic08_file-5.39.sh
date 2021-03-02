@@ -19,5 +19,7 @@ ${log} `basename "$0"` " checked" basic &&
 
 make install &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/file-5.39 &&
 ${log} `basename "$0"` " finished" basic 
 

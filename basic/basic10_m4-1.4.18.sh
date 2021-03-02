@@ -23,4 +23,6 @@ ${log} `basename "$0"` " checked" basic &&
 
 make install &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/m4-1.4.18 &&
 ${log} `basename "$0"` " finished" basic 

@@ -30,4 +30,6 @@ ${log} `basename "$0"` " build" roottools &&
 
 make install &&
 ${log} `basename "$0"` " installed" roottools &&
+
+rm -rf /sources/gcc-10.2.0 &&
 ${log} `basename "$0"` " finished" roottools

@@ -38,4 +38,5 @@ ${log} `basename "$0"` " build" crosstools &&
 make DESTDIR=$LFS install &&
 $LFS/tools/libexec/gcc/$LFS_TGT/10.2.0/install-tools/mkheaders &&
 ${log} `basename "$0"` " installed" crosstools &&
+rm -rf $LFS/sources/glibc-2.33 &&
 ${log} `basename "$0"` " finished" crosstools

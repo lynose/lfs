@@ -15,4 +15,6 @@ ${log} `basename "$0"` " built" basic &&
 
 make install &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/less-563 &&
 ${log} `basename "$0"` " finished" basic

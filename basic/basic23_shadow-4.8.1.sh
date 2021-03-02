@@ -38,4 +38,6 @@ grpconv &&
 sed -i 's/yes/no/' /etc/default/useradd &&
 
 passwd root
+
+rm -rf /sources/shadow-4.8.1 &&
 ${log} `basename "$0"` " finished" basic 

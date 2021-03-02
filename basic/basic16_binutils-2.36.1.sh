@@ -39,4 +39,6 @@ ${log} `basename "$0"` " critical check fail?" blfs_all
 make tooldir=/usr install &&
 rm -fv /usr/lib/lib{bfd,ctf,ctf-nobfd,opcodes}.a &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/binutils-2.36.1 &&
 ${log} `basename "$0"` " finished" basic 

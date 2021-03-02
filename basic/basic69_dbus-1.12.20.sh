@@ -28,5 +28,7 @@ ln -sfv ../../lib/$(readlink /usr/lib/libdbus-1.so) /usr/lib/libdbus-1.so &&
 ln -sfv /etc/machine-id /var/lib/dbus &&
 sed -i 's:/var/run:/run:' /lib/systemd/system/dbus.socket &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/dbus-1.12.20 &&
 ${log} `basename "$0"` " finished" basic 
 

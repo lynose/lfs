@@ -21,4 +21,6 @@ ${log} `basename "$0"` " expected check fail?" basic
 
 make install &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/autoconf-2.71 &&
 ${log} `basename "$0"` " finished" basic

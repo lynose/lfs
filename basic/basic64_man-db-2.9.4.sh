@@ -29,4 +29,6 @@ ${log} `basename "$0"` "check fail!!!" basic
 
 make install &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/man-db-2.9.4 &&
 ${log} `basename "$0"` " finished" basic 

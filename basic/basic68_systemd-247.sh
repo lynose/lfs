@@ -59,4 +59,6 @@ systemctl preset-all &&
 systemctl disable systemd-time-wait-sync.service &&
 rm -f /usr/lib/sysctl.d/50-pid-max.conf &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/systemd-247 &&
 ${log} `basename "$0"` " finished" basic 

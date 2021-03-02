@@ -21,4 +21,6 @@ ${log} `basename "$0"` " !!!test failed!!!" basic
 
 make install &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/automake-1.16.3 &&
 ${log} `basename "$0"` " finished" basic 

@@ -26,4 +26,6 @@ ${log} `basename "$0"` " tested" basic &&
 make install &&
 ln -svf expect5.45.4/libexpect5.45.4.so /usr/lib &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/expect5.45.4 &&
 ${log} `basename "$0"` " finished" basic

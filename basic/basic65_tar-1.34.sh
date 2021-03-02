@@ -24,5 +24,7 @@ ${log} `basename "$0"` " checked" basic &&
 make install &&
 make -C doc install-html docdir=/usr/share/doc/tar-1.34 &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/tar-1.34 &&
 ${log} `basename "$0"` " finished" basic 
 

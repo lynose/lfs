@@ -21,4 +21,6 @@ ${log} `basename "$0"` " expected check failed?" basic
 
 make install &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/libffi-3.3 &&
 ${log} `basename "$0"` " finished" basic 

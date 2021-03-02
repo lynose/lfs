@@ -22,4 +22,6 @@ rm -v /usr/lib/libzstd.a &&
 mv -v /usr/lib/libzstd.so.* /lib &&
 ln -sfv ../../lib/$(readlink /usr/lib/libzstd.so) /usr/lib/libzstd.so &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/zstd-1.4.8 &&
 ${log} `basename "$0"` " finished" basic 

@@ -34,4 +34,6 @@ tar --strip-components=1  \
     -C /usr/share/doc/python-3.9.2/html \
     -xvf ../python-3.9.2-docs-html.tar.bz2 &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/Python-3.9.2 &&
 ${log} `basename "$0"` " finished" basic 

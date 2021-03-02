@@ -61,6 +61,7 @@ cd .. &&
 cat gcc/limitx.h gcc/glimits.h gcc/limity.h > \
   `dirname $($LFS_TGT-gcc -print-libgcc-file-name)`/install-tools/include/limits.h &&
 ${log} `basename "$0"` " installed" crosstools &&
+rm -rf $LFS/sources/gcc-10.2.0 &&
 ${log} `basename "$0"` " finished" crosstools
 
 

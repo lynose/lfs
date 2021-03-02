@@ -17,4 +17,6 @@ ${log} `basename "$0"` " build" crosstemp &&
 
 make DESTDIR=$LFS install &&
 ${log} `basename "$0"` " installed" crosstemp &&
+
+rm -rf $LFS/sources/diffutils-3.7 &&
 ${log} `basename "$0"` " finished" crosstemp

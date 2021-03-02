@@ -17,5 +17,6 @@ rm usr/include/Makefile &&
 ${log} `basename "$0"` " build" crosstools &&
 cp -rv usr/include $LFS/usr &&
 ${log} `basename "$0"` " installed" crosstools &&
+rm -rf $LFS/sources/linux-5.10.17 &&
 ${log} `basename "$0"` " finished" crosstools
 

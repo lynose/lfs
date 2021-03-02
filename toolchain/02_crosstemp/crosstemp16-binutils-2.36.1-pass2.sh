@@ -27,4 +27,6 @@ ${log} `basename "$0"` " build" crosstemp &&
 make DESTDIR=$LFS install &&
 install -vm755 libctf/.libs/libctf.so.0.0.0 $LFS/usr/lib &&
 ${log} `basename "$0"` " installed" crosstemp &&
+
+rm -rf $LFS/sources/binutils-2.36.1 &&
 ${log} `basename "$0"` " finished" crosstemp

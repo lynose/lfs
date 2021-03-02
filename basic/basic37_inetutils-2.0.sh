@@ -29,4 +29,6 @@ make install &&
 mv -v /usr/bin/{hostname,ping,ping6,traceroute} /bin &&
 mv -v /usr/bin/ifconfig /sbin &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/inetutils-2.0 &&
 ${log} `basename "$0"` " finished" basic 

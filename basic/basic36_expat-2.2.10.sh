@@ -24,4 +24,6 @@ ${log} `basename "$0"` " checked" basic
 make install &&
 install -v -m644 doc/*.{html,png,css} /usr/share/doc/expat-2.2.10 &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/expat-2.2.10 &&
 ${log} `basename "$0"` " finished" basic 

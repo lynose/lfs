@@ -29,4 +29,6 @@ install -vm755 ninja /usr/bin/ &&
 install -vDm644 misc/bash-completion /usr/share/bash-completion/completions/ninja &&
 install -vDm644 misc/zsh-completion  /usr/share/zsh/site-functions/_ninja &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/ninja-1.10.2 &&
 ${log} `basename "$0"` " finished" basic 

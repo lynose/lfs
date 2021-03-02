@@ -17,4 +17,6 @@ make install &&
 mv -v /usr/bin/fuser   /bin &&
 mv -v /usr/bin/killall /bin &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/psmisc-23.4 &&
 ${log} `basename "$0"` " finished" basic 

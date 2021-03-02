@@ -25,4 +25,6 @@ make install &&
 mv -v /usr/bin/find /bin &&
 sed -i 's|find:=${BINDIR}|find:=/bin|' /usr/bin/updatedb &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/findutils-4.8.0 &&
 ${log} `basename "$0"` " finished" basic 

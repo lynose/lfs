@@ -29,4 +29,6 @@ ${log} `basename "$0"` " build" roottools &&
 
 make install &&
 ${log} `basename "$0"` " installed" roottools &&
+
+rm -rf /sources/util-linux-2.36.2 &&
 ${log} `basename "$0"` " finished" roottools
