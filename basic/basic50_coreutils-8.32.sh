@@ -19,12 +19,16 @@ make &&
 ${log} `basename "$0"` " built" basic &&
 
 make NON_ROOT_USERNAME=tester check-root &&
+${log} `basename "$0"` " check succeed" blfs_all ||
+${log} `basename "$0"` " check failed!" blfs_all
 
 echo "dummy:x:102:tester" >> /etc/group &&
 
 chown -Rv tester . &&
 
 su tester -c "PATH=$PATH make RUN_EXPENSIVE_TESTS=yes check" &&
+${log} `basename "$0"` " check succeed" blfs_all ||
+${log} `basename "$0"` " check failed!" blfs_all
 
 sed -i '/dummy/d' /etc/group &&
 
