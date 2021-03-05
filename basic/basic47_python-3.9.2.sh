@@ -9,6 +9,8 @@ tar -xJf /sources/Python-3.9.2.tar.xz -C /sources/ &&
 
 cd /sources/Python-3.9.2 &&
 
+sed 's|cpython/||' -i Include/cpython/pystate.h &&
+
 ./configure --prefix=/usr       \
             --enable-shared     \
             --with-system-expat \
