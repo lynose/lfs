@@ -7,4 +7,5 @@
 ./config06_inputrc.sh &&
 ./config07_shells.sh &&
 ./config08_sysconf.sh &&
-./config09_fstab.sh
+./config09_fstab.sh &&
+./config10_lsb.sh

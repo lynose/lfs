@@ -16,21 +16,32 @@ ${log} `basename "$0"` " configured" basic &&
 make &&
 ${log} `basename "$0"` " built" basic &&
 
+<<<<<<< HEAD:basic/basic67_vim-8.2.2433.sh
 chown -Rv tester . &&
 
 su tester -c "LANG=en_US.UTF-8 make -j1 test" &> /log/vim-test.log &&
 ${log} `basename "$0"` " unexpected test succeed" basic
 ${log} `basename "$0"` " expected test fail?" basic
 
+=======
+# chown -Rv tester . &&
+# 
+# su tester -c "LANG=en_US.UTF-8 make -j1 test" &> vim-test.log &&
+>>>>>>> master:basic/basic67_vim-8.2.1361.sh
 
 make install &&
 ln -sv vim /usr/bin/vi &&
 for L in  /usr/share/man/{,*/}man1/vim.1; do
     ln -sv vim.1 $(dirname $L)/vi.1
 done
+<<<<<<< HEAD:basic/basic67_vim-8.2.2433.sh
 
 cd /usr/share/vim &&
 ln -sv ../vim/vim82/doc /usr/share/doc/vim-8.2.2433 &&
+=======
+cd /usr/share/vim && 
+ln -sfv ../vim/vim82/doc /usr/share/doc/vim-8.2.1361 &&
+>>>>>>> master:basic/basic67_vim-8.2.1361.sh
 ${log} `basename "$0"` " installed" basic &&
 
 cat > /etc/vimrc << "EOF" &&

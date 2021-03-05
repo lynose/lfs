@@ -1,4 +1,4 @@
 #!/bin/sh
 cat > /etc/locale.conf << "EOF"
-LANG=de_DE.utf8
+LANG=en_GB.utf8
 EOF
