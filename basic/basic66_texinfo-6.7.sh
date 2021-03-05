@@ -29,4 +29,6 @@ for f in *
   do install-info $f dir 2>/dev/null
 done
 popd
+
+rm -rf /sources/texinfo-6.7 &&
 ${log} `basename "$0"` " finished" basic 

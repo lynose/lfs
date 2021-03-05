@@ -23,4 +23,6 @@ ${log} `basename "$0"` " checked" basic &&
 make install &&
 install -v -Dm644 doc/I18N-HOWTO /usr/share/doc/intltool-0.51.0/I18N-HOWTO &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/intltool-0.51.0 &&
 ${log} `basename "$0"` " finished" basic 

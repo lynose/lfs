@@ -25,4 +25,6 @@ ${log} `basename "$0"` " checked" basic &&
 make install &&
 make install-html &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/mpfr-4.1.0 &&
 ${log} `basename "$0"` " finished" basic 

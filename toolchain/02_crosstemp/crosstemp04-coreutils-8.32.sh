@@ -29,4 +29,6 @@ mv -v $LFS/usr/share/man/man1/chroot.1                        $LFS/usr/share/man
 sed -i 's/"1"/"8"/'                                           $LFS/usr/share/man/man8/chroot.8 &&
 
 ${log} `basename "$0"` " installed" crosstemp &&
+
+rm -rf $LFS/sources/coreutils-8.32 &&
 ${log} `basename "$0"` " finished" crosstemp

@@ -20,4 +20,6 @@ ${log} `basename "$0"` " checked" basic &&
 
 make install &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/pkg-config-0.29.2 &&
 ${log} `basename "$0"` " finished" basic 

@@ -1,6 +1,6 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" target &&
-save_lib="ld-2.32.so libc-2.32.so libpthread-2.32.so libthread_db-1.0.so"
+save_lib="ld-2.33.so libc-2.33.so libpthread-2.33.so libthread_db-1.0.so"
 
 cd /lib
 

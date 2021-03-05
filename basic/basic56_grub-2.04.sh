@@ -20,4 +20,6 @@ ${log} `basename "$0"` " built" basic &&
 make install &&
 mv -v /etc/bash_completion.d/grub /usr/share/bash-completion/completions &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/grub-2.04 &&
 ${log} `basename "$0"` " finished" basic 

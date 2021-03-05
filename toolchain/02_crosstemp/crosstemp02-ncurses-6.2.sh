@@ -38,4 +38,6 @@ echo "INPUT(-lncursesw)" > $LFS/usr/lib/libncurses.so &&
 mv -v $LFS/usr/lib/libncursesw.so.6* $LFS/lib &&
 ln -sfv ../../lib/$(readlink $LFS/usr/lib/libncursesw.so) $LFS/usr/lib/libncursesw.so &&
 ${log} `basename "$0"` " installed" crosstemp &&
+
+rm -rf $LFS/sources/ncurses-6.2 &&
 ${log} `basename "$0"` " finished" crosstemp

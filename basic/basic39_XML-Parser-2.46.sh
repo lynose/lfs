@@ -20,4 +20,6 @@ ${log} `basename "$0"` " checked" basic &&
 
 make install &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/XML-Parser-2.46 &&
 ${log} `basename "$0"` " finished" basic 

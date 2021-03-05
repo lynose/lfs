@@ -10,10 +10,10 @@ tar xf $LFS/sources/gcc-10.2.0.tar.xz -C $LFS/sources/ &&
 cd $LFS/sources/gcc-10.2.0 &&
 tar xf ../mpfr-4.1.0.tar.xz &&
 mv -v mpfr-4.1.0 mpfr &&
-tar xf ../gmp-6.2.0.tar.xz &&
-mv -v gmp-6.2.0 gmp &&
-tar xf ../mpc-1.1.0.tar.gz &&
-mv -v mpc-1.1.0 mpc &&
+tar xf ../gmp-6.2.1.tar.xz &&
+mv -v gmp-6.2.1 gmp &&
+tar xf ../mpc-1.2.1.tar.gz &&
+mv -v mpc-1.2.1 mpc &&
 
 case $(uname -m) in
   x86_64)
@@ -21,10 +21,6 @@ case $(uname -m) in
   ;;
 esac
 
-if [ -d build ]
- then
-  rm -rf build
-fi
 mkdir -v build &&
 cd build &&
 
@@ -56,5 +52,7 @@ ${log} `basename "$0"` " build" crosstemp &&
 make DESTDIR=$LFS install &&
 ln -sv gcc $LFS/usr/bin/cc &&
 ${log} `basename "$0"` " installed" crosstemp &&
+
+rm -rf $LFS/sources/gcc-10.2.0 &&
 ${log} `basename "$0"` " finished" crosstemp
 

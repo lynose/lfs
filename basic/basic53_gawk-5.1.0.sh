@@ -24,4 +24,6 @@ make install &&
 mkdir -v /usr/share/doc/gawk-5.1.0 &&
 cp    -v doc/{awkforai.txt,*.{eps,pdf,jpg}} /usr/share/doc/gawk-5.1.0 &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/gawk-5.1.0 &&
 ${log} `basename "$0"` " finished" basic 

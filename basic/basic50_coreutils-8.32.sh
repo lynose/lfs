@@ -41,4 +41,6 @@ mv -v /usr/bin/{false,ln,ls,mkdir,mknod,mv,pwd,rm} /bin &&
 sed -i s/\"1\"/\"8\"/1 /usr/share/man/man8/chroot.8 &&
 /bin/mv -v /usr/bin/{head,nice,sleep,touch} /bin &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/coreutils-8.32 &&
 ${log} `basename "$0"` " finished" basic 

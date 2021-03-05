@@ -25,4 +25,6 @@ make install &&
 mv -v /usr/lib/libattr.so.* /lib &&
 ln -sfv ../../lib/$(readlink /usr/lib/libattr.so) /usr/lib/libattr.so &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/attr-2.4.48 &&
 ${log} `basename "$0"` " finished" basic 

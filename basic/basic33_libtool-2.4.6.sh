@@ -19,4 +19,6 @@ ${log} `basename "$0"` " unexpected succeeded" basic
 
 make install &&
 ${log} `basename "$0"` " installed" basic &&
+
+rm -rf /sources/libtool-2.4.6 &&
 ${log} `basename "$0"` " finished" basic 

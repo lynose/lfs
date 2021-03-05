@@ -14,7 +14,13 @@ fi
 
 mkdir $LFS/log
 
-cp -R ../sources/* $LFS/sources
+while read -r line; do
+    # Get the file name, ignoring comments and blank lines
+    if $(echo $line | grep -E -q '^ *$|^#' ); then continue; fi
+    file=$(echo $line | cut -d" " -f2) &&
+    cp -v /sources/$file $LFS/sources
+done < /sources/md5sums-lfs
+
 cp -R ../toolchain $LFS/sh
 cp -R ../basic $LFS/sh
 cp -R ../config $LFS/sh
