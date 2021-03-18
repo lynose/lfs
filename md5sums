@@ -63,7 +63,7 @@ e9557dd5b1409f5d7b37ef717c64518e  readline-8.1.tar.gz
 6d906edfdb3202304059233f51f9a71d  sed-4.8.tar.xz
 4b05eff8a427cf50e615bda324b5bc45  shadow-4.8.1.tar.xz
 b0d6e603b814908acc69db29bbfb023c  systemd-247.tar.gz
-438c98be200e1c3b308e58a3399d4465  systemd-man-pages-247.tar.xz
+7d8a53105b7a205f2863e360d9a23f95  systemd-man-pages-247-2.tar.xz
 9a08d29a9ac4727130b5708347c0f5cf  tar-1.34.tar.xz
 8a4c004f48984a03a7747e9ba06e4da4  tcl8.6.11-src.tar.gz
 e358a9140c3a171e42f18c8a7f6a36ea  tcl8.6.11-html.tar.gz
@@ -79,4 +79,4 @@ e873db7cfa5ef05832e6d55a5a572840  zstd-1.4.8.tar.gz
 cd8ebed2a67fff2e231026df91af6776  coreutils-8.32-i18n-1.patch
 9a5997c3452909b1769918c759eff8a2  glibc-2.33-fhs-1.patch
 f75cca16a38da6caa7d52151f7136895  kbd-2.4.0-backspace-1.patch
-573a166f3620875208f78bf4dc431c8b  systemd-247-upstream_fixes-1.patch
+7afe3d13464ae7d20dbe5e6f0fb8ccd3  systemd-247-upstream_fixes-2.patch
