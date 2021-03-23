@@ -11,8 +11,6 @@ cd /sources/systemd-247 &&
 
 patch -Np1 -i ../systemd-247-upstream_fixes-2.patch &&
  
-tar -xf ../systemd-man-pages-247.tar.xz &&
-
 sed '181,$ d' -i src/resolve/meson.build &&
 sed -i 's/GROUP="render"/GROUP="video"/' rules.d/50-udev-default.rules.in &&
 
@@ -51,7 +49,7 @@ LANG=en_US.UTF-8 ninja &&
 ${log} `basename "$0"` " built" basic &&
 
 LANG=en_US.UTF-8 ninja install &&
-tar -xf ../../systemd-man-pages-247-2.tar.xz --strip-components=1 -C /usr/share/man &&
+tar -xf /sources/systemd-man-pages-247-2.tar.xz --strip-components=1 -C /usr/share/man &&
 rm -rf /usr/lib/pam.d &&
 systemd-machine-id-setup &&
 systemctl preset-all &&
