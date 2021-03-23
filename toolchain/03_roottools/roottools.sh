@@ -1,11 +1,13 @@
 ${log} `basename "$0"` " ======================================" roottools &&
 ${log} `basename "$0"`  "Started roottools build" roottools &&
 ${log} `basename "$0"` " ======================================" roottools &&
+export WORKDIR=$(pwd) &&
+${log} `basename "$0"` " ======================================" roottools &&
 ./roottools03-gcc-stdc++-10.2.0-pass2.sh &&
 ${log} `basename "$0"` " ======================================" roottools &&
 ./roottools04-gettext-0.21.sh &&
 ${log} `basename "$0"` " ======================================" roottools &&
-./roottools05-bison-3.7.5.sh &&
+./roottools05-bison-3.7.6.sh &&
 ${log} `basename "$0"` " ======================================" roottools &&
 ./roottools06-perl-5.32.1.sh &&
 ${log} `basename "$0"` " ======================================" roottools &&

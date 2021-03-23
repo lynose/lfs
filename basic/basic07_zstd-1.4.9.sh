@@ -1,13 +1,13 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" basic &&
-if test -d /sources/zstd-1.4.8
+if test -d /sources/zstd-1.4.9
  then
-  rm -rf /sources/zstd-1.4.8
+  rm -rf /sources/zstd-1.4.9
 fi
 
-tar -xzf /sources/zstd-1.4.8.tar.gz -C /sources/ &&
+tar -xzf /sources/zstd-1.4.9.tar.gz -C /sources/ &&
 
-cd /sources/zstd-1.4.8 &&
+cd /sources/zstd-1.4.9 &&
 
 make &&
 ${log} `basename "$0"` " built" basic &&
@@ -23,5 +23,6 @@ mv -v /usr/lib/libzstd.so.* /lib &&
 ln -sfv ../../lib/$(readlink /usr/lib/libzstd.so) /usr/lib/libzstd.so &&
 ${log} `basename "$0"` " installed" basic &&
 
-rm -rf /sources/zstd-1.4.8 &&
+cd $WORKDIR &&
+rm -rf /sources/zstd-1.4.9 &&
 ${log} `basename "$0"` " finished" basic 

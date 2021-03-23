@@ -1,16 +1,16 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" roottools &&
-if test -d /sources/bison-3.7.5
+if test -d /sources/bison-3.7.6
  then
-  rm -rf /sources/bison-3.7.5
+  rm -rf /sources/bison-3.7.6
 fi
 
-tar -xJf /sources/bison-3.7.5.tar.xz -C /sources/ &&
+tar -xJf /sources/bison-3.7.6.tar.xz -C /sources/ &&
 
-cd /sources/bison-3.7.5 &&
+cd /sources/bison-3.7.6 &&
 
 ./configure --prefix=/usr \
-            --docdir=/usr/share/doc/bison-3.7.5 &&
+            --docdir=/usr/share/doc/bison-3.7.6 &&
 ${log} `basename "$0"` " configured" roottools &&
 
 make &&
@@ -19,5 +19,6 @@ ${log} `basename "$0"` " build" roottools &&
 make install &&
 ${log} `basename "$0"` " installed" roottools &&
 
-rm -rf /sources/bison-3.7.5
+cd $WORKDIR &&
+rm -rf /sources/bison-3.7.6 &&
 ${log} `basename "$0"` " finished" roottools

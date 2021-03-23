@@ -22,8 +22,9 @@ ${log} `basename "$0"` " configured" crosstools &&
 make &&
 ${log} `basename "$0"` " build" crosstools &&
 
-make install &&
+make install -j1 &&
 ${log} `basename "$0"` " installed" crosstools &&
 
+cd $WORKDIR &&
 rm -rf $LFS/sources/binutils-2.36.1 &&
 ${log} `basename "$0"` " finished" crosstools

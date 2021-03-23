@@ -1,11 +1,11 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" basic &&
-if test -d /sources/e2fsprogs-1.46.1
+if test -d /sources/e2fsprogs-1.46.2
  then
-  rm -rf /sources/e2fsprogs-1.46.1
+  rm -rf /sources/e2fsprogs-1.46.2
 fi
-tar xf /sources/e2fsprogs-1.46.1.tar.gz -C /sources/ &&
-cd /sources/e2fsprogs-1.46.1 &&
+tar xf /sources/e2fsprogs-1.46.2.tar.gz -C /sources/ &&
+cd /sources/e2fsprogs-1.46.2 &&
 
 mkdir -v build &&
 cd build &&
@@ -36,5 +36,6 @@ install -v -m644 doc/com_err.info /usr/share/info &&
 install-info --dir-file=/usr/share/info/dir /usr/share/info/com_err.info &&
 ${log} `basename "$0"` " installed" basic &&
 
-rm -rf /sources/e2fsprogs-1.46.1 &&
+cd $WORKDIR &&
+rm -rf /sources/e2fsprogs-1.46.2 &&
 ${log} `basename "$0"` " finished" basic 

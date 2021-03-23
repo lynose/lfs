@@ -1,13 +1,13 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" basic &&
-if test -d /sources/bc-3.3.0
+if test -d /sources/bc-3.3.3
  then
-  rm -rf /sources/bc-3.3.0
+  rm -rf /sources/bc-3.3.3
 fi
 
-tar -xJf /sources/bc-3.3.0.tar.xz -C /sources/ &&
+tar -xJf /sources/bc-3.3.3.tar.xz -C /sources/ &&
 
-cd /sources/bc-3.3.0 &&
+cd /sources/bc-3.3.3 &&
 
 PREFIX=/usr CC=gcc ./configure.sh -G -O3 &&
 ${log} `basename "$0"` " configured" basic &&
@@ -23,5 +23,6 @@ ${log} `basename "$0"` " !!!check failed!!!" blfs_all
 make install &&
 ${log} `basename "$0"` " installed" basic &&
 
-rm -rf /sources/bc-3.3.0 &&
+cd $WORKDIR &&
+rm -rf /sources/bc-3.3.3 &&
 ${log} `basename "$0"` " finished" basic 

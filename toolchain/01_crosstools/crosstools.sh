@@ -1,11 +1,13 @@
 ${log} `basename "$0"` " ======================================" crosstools &&
 ${log} `basename "$0"`  "Started Cross Toolchain build in $LFS"  crosstools &&
 ${log} `basename "$0"` " ======================================" crosstools &&
+export WORKDIR=$(pwd) &&
+${log} `basename "$0"` " ======================================" crosstools &&
 ./crosstools01-binutils-2.36.1.sh &&
 ${log} `basename "$0"` " ======================================" crosstools &&
 ./crosstools02-gcc-10.2.0-pass1.sh &&
 ${log} `basename "$0"` " ======================================" crosstools &&
-./crosstools03-linux-header-5.10.17.sh &&
+./crosstools03-linux-header-5.11.6.sh &&
 ${log} `basename "$0"` " ======================================" crosstools &&
 ./crosstools04-glibc-2.33.sh &&
 ${log} `basename "$0"` " ======================================" crosstools &&
