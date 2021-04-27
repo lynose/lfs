@@ -1,5 +1,6 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" roottools &&
+WORK=`pwd` &&
 
 if test -d /sources/Python-3.9.2
  then
@@ -20,5 +21,6 @@ ${log} `basename "$0"` " build" roottools &&
 make install &&
 ${log} `basename "$0"` " installed" roottools &&
 
+cd $WORK &&
 rm -rf /sources/Python-3.9.2 &&
 ${log} `basename "$0"` " finished" roottools

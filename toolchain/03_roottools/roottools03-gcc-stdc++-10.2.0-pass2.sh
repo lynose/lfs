@@ -1,5 +1,6 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" roottools &&
+WORK=`pwd` &&
 
 if [ -d /sources/gcc-10.2.0 ]
  then
@@ -31,5 +32,6 @@ ${log} `basename "$0"` " build" roottools &&
 make install &&
 ${log} `basename "$0"` " installed" roottools &&
 
+cd ${WORK} &&
 rm -rf /sources/gcc-10.2.0 &&
 ${log} `basename "$0"` " finished" roottools

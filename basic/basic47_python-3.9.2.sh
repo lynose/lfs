@@ -1,5 +1,6 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" basic &&
+WORK=`pwd` &&
 if test -d /sources/Python-3.9.2
  then
   rm -rf /sources/Python-3.9.2
@@ -8,8 +9,6 @@ fi
 tar -xJf /sources/Python-3.9.2.tar.xz -C /sources/ &&
 
 cd /sources/Python-3.9.2 &&
-
-sed 's|cpython/||' -i Include/cpython/pystate.h &&
 
 ./configure --prefix=/usr       \
             --enable-shared     \
@@ -37,5 +36,6 @@ tar --strip-components=1  \
     -xvf ../python-3.9.2-docs-html.tar.bz2 &&
 ${log} `basename "$0"` " installed" basic &&
 
+cd $WORK &&
 rm -rf /sources/Python-3.9.2 &&
 ${log} `basename "$0"` " finished" basic 

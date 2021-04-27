@@ -1,7 +1,6 @@
 ${log} `basename "$0"` " ======================================" roottools &&
 ${log} `basename "$0"`  "Started roottools build" roottools &&
 ${log} `basename "$0"` " ======================================" roottools &&
-export WORKDIR=$(pwd) &&
 ${log} `basename "$0"` " ======================================" roottools &&
 ./roottools03-gcc-stdc++-10.2.0-pass2.sh &&
 ${log} `basename "$0"` " ======================================" roottools &&

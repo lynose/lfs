@@ -1,6 +1,6 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" roottools &&
-
+WORK=`pwd` &&
 if test -d /sources/perl-5.32.1
  then
   rm -rf /sources/perl-5.32.1
@@ -26,5 +26,6 @@ ${log} `basename "$0"` " build" roottools &&
 make install &&
 ${log} `basename "$0"` " installed" roottools &&
 
+cd $WORK &&
 rm -rf /sources/perl-5.32.1 &&
 ${log} `basename "$0"` " finished" roottools

@@ -1,5 +1,6 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" roottools &&
+WORK=`pwd`
 if test -d /sources/bison-3.7.6
  then
   rm -rf /sources/bison-3.7.6
@@ -19,6 +20,6 @@ ${log} `basename "$0"` " build" roottools &&
 make install &&
 ${log} `basename "$0"` " installed" roottools &&
 
-cd $WORKDIR &&
+cd $WORK &&
 rm -rf /sources/bison-3.7.6 &&
 ${log} `basename "$0"` " finished" roottools
