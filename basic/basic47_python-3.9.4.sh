@@ -1,14 +1,14 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" basic &&
 WORK=`pwd` &&
-if test -d /sources/Python-3.9.2
+if test -d /sources/Python-3.9.4
  then
-  rm -rf /sources/Python-3.9.2
+  rm -rf /sources/Python-3.9.4
 fi
 
-tar -xJf /sources/Python-3.9.2.tar.xz -C /sources/ &&
+tar -xJf /sources/Python-3.9.4.tar.xz -C /sources/ &&
 
-cd /sources/Python-3.9.2 &&
+cd /sources/Python-3.9.4 &&
 
 ./configure --prefix=/usr       \
             --enable-shared     \
@@ -28,14 +28,14 @@ ${log} `basename "$0"` " !!! check failed? !!!" basic
 
 make install &&
 
-install -v -dm755 /usr/share/doc/python-3.9.2/html &&
+install -v -dm755 /usr/share/doc/python-3.9.4/html &&
 tar --strip-components=1  \
     --no-same-owner       \
     --no-same-permissions \
-    -C /usr/share/doc/python-3.9.2/html \
-    -xvf ../python-3.9.2-docs-html.tar.bz2 &&
+    -C /usr/share/doc/python-3.9.4/html \
+    -xvf ../python-3.9.4-docs-html.tar.bz2 &&
 ${log} `basename "$0"` " installed" basic &&
 
 cd $WORK &&
-rm -rf /sources/Python-3.9.2 &&
+rm -rf /sources/Python-3.9.4 &&
 ${log} `basename "$0"` " finished" basic 

@@ -5,7 +5,7 @@ if test -d /sources/acl-2.3.1
   rm -rf /sources/acl-2.3.1
 fi
 
-tar -xzf /sources/acl-2.3.1.tar.gz -C /sources &&
+tar xf /sources/acl-2.3.1.tar.xz -C /sources &&
 
 cd /sources/acl-2.3.1 &&
 

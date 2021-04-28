@@ -1,13 +1,13 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" basic &&
-if test -d /sources/bc-3.3.4
+if test -d /sources/bc-4.0.1
  then
-  rm -rf /sources/bc-3.3.4
+  rm -rf /sources/bc-4.0.1
 fi
 
-tar -xJf /sources/bc-3.3.4.tar.xz -C /sources/ &&
+tar -xJf /sources/bc-4.0.1.tar.xz -C /sources/ &&
 
-cd /sources/bc-3.3.4 &&
+cd /sources/bc-4.0.1 &&
 
 CC=gcc ./configure --prefix=/usr -G -O3 &&
 ${log} `basename "$0"` " configured" basic &&
@@ -24,5 +24,5 @@ make install &&
 ${log} `basename "$0"` " installed" basic &&
 
 cd $WORKDIR &&
-rm -rf /sources/bc-3.3.4 &&
+rm -rf /sources/bc-4.0.1 &&
 ${log} `basename "$0"` " finished" basic 

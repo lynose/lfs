@@ -1,11 +1,11 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" basic &&
-if test -d /sources/grub-2.04
+if test -d /sources/grub-2.06~rc1
  then
-  rm -rf /sources/grub-2.04
+  rm -rf /sources/grub-2.06~rc1
 fi
-tar xf /sources/grub-2.04.tar.xz -C /sources/ &&
-cd /sources/grub-2.04 &&
+tar xf /sources/grub-2.06~rc1.tar.xz -C /sources/ &&
+cd /sources/grub-2.06~rc1 &&
 
 ./configure --prefix=/usr          \
             --sbindir=/sbin        \
@@ -21,5 +21,5 @@ make install &&
 mv -v /etc/bash_completion.d/grub /usr/share/bash-completion/completions &&
 ${log} `basename "$0"` " installed" basic &&
 
-rm -rf /sources/grub-2.04 &&
+rm -rf /sources/grub-2.06~rc1 &&
 ${log} `basename "$0"` " finished" basic 
