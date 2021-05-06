@@ -50,6 +50,7 @@ localedef -i de_DE -f UTF-8 de_DE.UTF-8 &&
 localedef -i en_GB -f UTF-8 en_GB.UTF-8 &&
 localedef -i en_US -f ISO-8859-1 en_US &&
 localedef -i en_US -f UTF-8 en_US.UTF-8 &&
+localedef -i ja_JP -f SHIFT_JIS ja_JP.SIJS 2> /dev/null || true
 
 cat > /etc/nsswitch.conf << "EOF" &&
 # Begin /etc/nsswitch.conf
