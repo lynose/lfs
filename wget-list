@@ -38,7 +38,7 @@ https://www.kernel.org/pub/linux/utils/net/iproute2/iproute2-5.11.0.tar.xz
 https://www.kernel.org/pub/linux/utils/kbd/kbd-2.4.0.tar.xz
 https://www.kernel.org/pub/linux/utils/kernel/kmod/kmod-28.tar.xz
 https://www.greenwoodsoftware.com/less/less-581.tar.gz
-https://www.linuxfromscratch.org/lfs/downloads/development/lfs-bootscripts-20210201.tar.xz
+https://www.linuxfromscratch.org/lfs/downloads/development/lfs-bootscripts-20210428.tar.xz
 https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-2.49.tar.xz
 https://sourceware.org/pub/libffi/libffi-3.3.tar.gz
 https://download.savannah.gnu.org/releases/libpipeline/libpipeline-1.5.3.tar.gz
@@ -85,4 +85,4 @@ https://www.linuxfromscratch.org/patches/lfs/development/coreutils-8.32-i18n-1.p
 https://www.linuxfromscratch.org/patches/lfs/development/glibc-2.33-fhs-1.patch
 https://www.linuxfromscratch.org/patches/lfs/development/kbd-2.4.0-backspace-1.patch
 https://www.linuxfromscratch.org/patches/lfs/development/sysvinit-2.99-consolidated-1.patch
-https://www.linuxfromscratch.org/patches/lfs/development/systemd-247-upstream_fixes-2.patch
+https://www.linuxfromscratch.org/patches/lfs/development/systemd-247-upstream_fixes-3.patch
