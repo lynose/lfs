@@ -1,13 +1,13 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" basic &&
-if test -d /sources/vim-8.2.2604
+if test -d /sources/vim-8.2.2813
  then
-  rm -rf /sources/vim-8.2.2604
+  rm -rf /sources/vim-8.2.2813
 fi
 
-tar xf /sources/vim-8.2.2604.tar.gz -C /sources/ &&
+tar xf /sources/vim-8.2.2813.tar.gz -C /sources/ &&
 
-cd /sources/vim-8.2.2604 &&
+cd /sources/vim-8.2.2813 &&
 
 echo '#define SYS_VIMRC_FILE "/etc/vimrc"' >> src/feature.h &&
 ./configure --prefix=/usr &&
@@ -29,7 +29,7 @@ for L in  /usr/share/man/{,*/}man1/vim.1; do
 done
 
 cd /usr/share/vim &&
-ln -sv ../vim/vim82/doc /usr/share/doc/vim-8.2.2604 &&
+ln -sv ../vim/vim82/doc /usr/share/doc/vim-8.2.2813 &&
 ${log} `basename "$0"` " installed" basic &&
 
 cat > /etc/vimrc << "EOF" &&
@@ -51,5 +51,5 @@ endif
 EOF
 
 cd $WORKDIR &&
-rm -rf /sources/vim-8.2.2604 &&
+rm -rf /sources/vim-8.2.2813 &&
 ${log} `basename "$0"` " finished" basic 

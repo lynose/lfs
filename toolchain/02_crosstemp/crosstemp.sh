@@ -13,7 +13,7 @@ ${log} `basename "$0"` " ======================================" crosstemp &&
 ${log} `basename "$0"` " ======================================" crosstemp &&
 ./crosstemp05-diffutils-3.7.sh &&
 ${log} `basename "$0"` " ======================================" crosstemp &&
-./crosstemp06-file-5.39.sh &&
+./crosstemp06-file-5.40.sh &&
 ${log} `basename "$0"` " ======================================" crosstemp &&
 ./crosstemp07-findutils-4.8.0.sh &&
 ${log} `basename "$0"` " ======================================" crosstemp &&
