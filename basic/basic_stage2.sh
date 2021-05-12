@@ -81,7 +81,7 @@ ${log} `basename "$0"` " ======================================" basic &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic71_util-linux-2.36.2.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic72_e2fsprogs-1.46.1.sh &&
+./basic72_e2fsprogs-1.46.2.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic73-backup_obj.sh
 
