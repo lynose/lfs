@@ -16,13 +16,13 @@ make &&
 ${log} `basename "$0"` " built" basic &&
 
 make check &&
-${log} `basename "$0"` " unexpected check succeed" basic
-${log} `basename "$0"` " expected check fail?" basic
+${log} `basename "$0"` " check succeed" basic ||
+${log} `basename "$0"` " !!!check fail!!!" basic
 
 make install &&
-mv -v /usr/bin/gzip /bin &&
 ${log} `basename "$0"` " installed" basic &&
 
+cd $WORKDIR &&
 rm -rf /sources/gzip-1.10 &&
 ${log} `basename "$0"` " finished" basic 
 

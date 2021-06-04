@@ -22,8 +22,6 @@ make check &&
 ${log} `basename "$0"` " checked" basic &&
 
 make install &&
-mv -v /usr/lib/libattr.so.* /lib &&
-ln -sfv ../../lib/$(readlink /usr/lib/libattr.so) /usr/lib/libattr.so &&
 ${log} `basename "$0"` " installed" basic &&
 
 cd $WORKDIR &&

@@ -1,15 +1,15 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" roottools &&
-WORK=`pwd` &&
 
-if [ -d /sources/gcc-10.2.0 ]
+
+if [ -d /sources/gcc-11.1.0 ]
  then
-  rm -rf /sources/gcc-10.2.0
+  rm -rf /sources/gcc-11.1.0
 fi
 
-tar xf /sources/gcc-10.2.0.tar.xz -C /sources/ &&
+tar xf /sources/gcc-11.1.0.tar.xz -C /sources/ &&
 
-cd /sources/gcc-10.2.0 &&
+cd /sources/gcc-11.1.0 &&
 
 ln -s gthr-posix.h libgcc/gthr-default.h
 
@@ -32,6 +32,6 @@ ${log} `basename "$0"` " build" roottools &&
 make install &&
 ${log} `basename "$0"` " installed" roottools &&
 
-cd ${WORK} &&
-rm -rf /sources/gcc-10.2.0 &&
+cd ${WORKDIR} &&
+rm -rf /sources/gcc-11.1.0 &&
 ${log} `basename "$0"` " finished" roottools

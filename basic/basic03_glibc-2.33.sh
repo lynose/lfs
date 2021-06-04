@@ -12,6 +12,8 @@ patch -Np1 -i ../glibc-2.33-fhs-1.patch &&
 
 sed -e '402a\      *result = local->data.services[database_index];' \
     -i nss/nss_database.c &&
+    
+sed 's/amx_/amx-/' -i sysdeps/x86/tst-cpu-features-supports.c &&
 
 mkdir -v build &&
 cd build &&

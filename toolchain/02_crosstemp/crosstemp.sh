@@ -35,6 +35,6 @@ ${log} `basename "$0"` " ======================================" crosstemp &&
 ${log} `basename "$0"` " ======================================" crosstemp &&
 ./crosstemp16-binutils-2.36.1-pass2.sh &&
 ${log} `basename "$0"` " ======================================" crosstemp &&
-./crosstemp17-gcc-10.2.0-pass2.sh &&
+./crosstemp17-gcc-11.1.0-pass2.sh &&
 ${log} `basename "$0"` " ======================================" crosstemp &&
 ${log} `basename "$0"` " Finished Crosstemp build in $LFS" crosstemp

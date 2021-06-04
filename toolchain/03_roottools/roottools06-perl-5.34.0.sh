@@ -1,12 +1,11 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" roottools &&
-WORK=`pwd` &&
-if test -d /sources/perl-5.32.1
+if test -d /sources/perl-5.34.0
  then
-  rm -rf /sources/perl-5.32.1
+  rm -rf /sources/perl-5.34.0
 fi
-tar -xJf /sources/perl-5.32.1.tar.xz -C /sources/ &&
-cd /sources/perl-5.32.1 &&
+tar -xJf /sources/perl-5.34.0.tar.xz -C /sources/ &&
+cd /sources/perl-5.34.0 &&
 
 
 sh Configure -des                                     \
@@ -26,6 +25,6 @@ ${log} `basename "$0"` " build" roottools &&
 make install &&
 ${log} `basename "$0"` " installed" roottools &&
 
-cd $WORK &&
-rm -rf /sources/perl-5.32.1 &&
+cd $WORKDIR &&
+rm -rf /sources/perl-5.34.0 &&
 ${log} `basename "$0"` " finished" roottools

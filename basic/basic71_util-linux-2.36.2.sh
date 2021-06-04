@@ -29,12 +29,14 @@ make &&
 ${log} `basename "$0"` " built" basic &&
 
 chown -Rv tester . &&
-${log} `basename "$0"` " unexpected check succeed" basic
-${log} `basename "$0"` " expected check fail?" basicsu tester -c "make -k check"
+su tester -c "make -k check" &&
+${log} `basename "$0"` " check succeed" basic ||
+${log} `basename "$0"` " !!!check failed!!!" basic
 
 
 make install &&
 ${log} `basename "$0"` " installed" basic &&
 
+cd $WORKDIR &&
 rm -rf /sources/util-linux-2.36.2 &&
 ${log} `basename "$0"` " finished" basic 

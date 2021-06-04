@@ -28,9 +28,9 @@ PATH=$PATH make tests < $(tty)
 EOF
 
 make install &&
-mv -vf /usr/bin/bash /bin &&
 ${log} `basename "$0"` " installed" basic &&
 
+cd $WORKDIR &&
 rm -rf /sources/bash-5.1 &&
 ${log} `basename "$0"` " finished" basic &&
 

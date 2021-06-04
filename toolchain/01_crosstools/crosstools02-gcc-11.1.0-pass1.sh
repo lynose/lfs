@@ -1,19 +1,19 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" crosstools &&
 
-if [ -d $LFS/sources/gcc-10.2.0 ]
+if [ -d $LFS/sources/gcc-11.1.0 ]
  then
-    rm -rf $LFS/sources/gcc-10.2.0
+    rm -rf $LFS/sources/gcc-11.1.0
 fi
 
-tar xf $LFS/sources/gcc-10.2.0.tar.xz -C $LFS/sources/ &&
-cd $LFS/sources/gcc-10.2.0 &&
+tar xf $LFS/sources/gcc-11.1.0.tar.xz -C $LFS/sources/ &&
+cd $LFS/sources/gcc-11.1.0 &&
 tar xf ../mpfr-4.1.0.tar.xz &&
 mv -v mpfr-4.1.0 mpfr &&
-tar xf ../gmp-6.2.0.tar.xz &&
-mv -v gmp-6.2.0 gmp &&
-tar xf ../mpc-1.1.0.tar.gz &&
-mv -v mpc-1.1.0 mpc
+tar xf ../gmp-6.2.1.tar.xz &&
+mv -v gmp-6.2.1 gmp &&
+tar xf ../mpc-1.2.1.tar.gz &&
+mv -v mpc-1.2.1 mpc
 
 case $(uname -m) in
   x86_64)
@@ -21,11 +21,6 @@ case $(uname -m) in
         -i.orig gcc/config/i386/t-linux64
  ;;
 esac
-
-if [ -d build ]
- then
-  rm -rf build
-fi
 
 mkdir -v build &&
 cd build &&
@@ -49,7 +44,7 @@ cd build &&
     --disable-libssp                               \
     --disable-libvtv                               \
     --disable-libstdcxx                            \
-    --enable-languages=c,c++                        &&
+    --enable-languages=c,c++                     &&
 
 ${log} `basename "$0"` " configured" crosstools &&
 
@@ -61,7 +56,9 @@ cd .. &&
 cat gcc/limitx.h gcc/glimits.h gcc/limity.h > \
   `dirname $($LFS_TGT-gcc -print-libgcc-file-name)`/install-tools/include/limits.h &&
 ${log} `basename "$0"` " installed" crosstools &&
-rm -rf $LFS/sources/gcc-10.2.0 &&
+
+cd $WORKDIR &&
+rm -rf $LFS/sources/gcc-11.1.0 &&
 ${log} `basename "$0"` " finished" crosstools
 
 

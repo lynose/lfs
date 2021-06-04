@@ -33,5 +33,6 @@ cp -vfr doc/* /usr/share/doc/openssl-1.1.1k &&
 
 ${log} `basename "$0"` " installed" basic &&
 
+cd $WORKDIR &&
 rm -rf /sources/openssl-1.1.1k &&
 ${log} `basename "$0"` " finished" basic 

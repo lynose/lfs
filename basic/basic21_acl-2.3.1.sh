@@ -11,7 +11,6 @@ cd /sources/acl-2.3.1 &&
 
 ./configure --prefix=/usr         \
             --disable-static      \
-            --libexecdir=/usr/lib \
             --docdir=/usr/share/doc/acl-2.3.1 &&
 ${log} `basename "$0"` " configured" basic &&
 
@@ -19,8 +18,6 @@ make &&
 ${log} `basename "$0"` " built" basic &&
 
 make install &&
-mv -v /usr/lib/libacl.so.* /lib &&
-ln -sfv ../../lib/$(readlink /usr/lib/libacl.so) /usr/lib/libacl.so &&
 ${log} `basename "$0"` " installed" basic &&
 
 cd $WORKDIR &&

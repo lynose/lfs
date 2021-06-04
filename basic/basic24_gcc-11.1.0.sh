@@ -1,13 +1,13 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" basic &&
-if test -d /sources/gcc-10.2.0
+if test -d /sources/gcc-11.1.0
  then
-  rm -rf /sources/gcc-10.2.0
+  rm -rf /sources/gcc-11.1.0
 fi
 
-tar -xJf /sources/gcc-10.2.0.tar.xz -C /sources &&
+tar -xJf /sources/gcc-11.1.0.tar.xz -C /sources &&
 
-cd /sources/gcc-10.2.0 &&
+cd /sources/gcc-11.1.0 &&
 
 case $(uname -m) in
   x86_64)
@@ -35,30 +35,30 @@ chown -Rv tester . &&
 su tester -c "PATH=$PATH make -k check" &&
 ${log} `basename "$0"` " Unexpected succeeded" basic
 
-../gcc-10.2.0/contrib/test_summary
+../gcc-11.1.0/contrib/test_summary > /log/gcc.log &&
 
 make install &&
-rm -rf /usr/lib/gcc/$(gcc -dumpmachine)/10.2.0/include-fixed/bits/ &&
+rm -rf /usr/lib/gcc/$(gcc -dumpmachine)/11.1.0/include-fixed/bits/ &&
 chown -v -R root:root \
-    /usr/lib/gcc/*linux-gnu/10.2.0/include{,-fixed} &&
+    /usr/lib/gcc/*linux-gnu/11.1.0/include{,-fixed} &&
 ln -sv ../usr/bin/cpp /lib &&
 
-install -v -dm755 /usr/lib/bfd-plugins &&
-ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/10.2.0/liblto_plugin.so \
+ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/11.1.0/liblto_plugin.so \
         /usr/lib/bfd-plugins/ &&
 ${log} `basename "$0"` " installed" basic &&
         
 echo 'int main(){}' > dummy.c &&
 cc dummy.c -v -Wl,--verbose &> /log/dummy.log &&
-readelf -l a.out | grep ': /lib' &&
-grep -o '/usr/lib.*/crt[1in].*succeeded' /log/dummy.log &&
-grep -B4 '^ /usr/include' /log/dummy.log &&
-grep 'SEARCH.*/usr/lib' /log/dummy.log |sed 's|; |\n|g' &&
-grep "/lib.*/libc.so.6 " /log/dummy.log &&
-grep found /log/dummy.log &&
+readelf -l a.out | grep ': /lib' > /log/gcc-test.log &&
+grep -o '/usr/lib.*/crt[1in].*succeeded' /log/dummy.log >> /log/gcc-test.log &&
+grep -B4 '^ /usr/include' /log/dummy.log >> /log/gcc-test.log &&
+grep 'SEARCH.*/usr/lib' /log/dummy.log |sed 's|; |\n|g' >> /log/gcc-test.log &&
+grep "/lib.*/libc.so.6 " /log/dummy.log >> /log/gcc-test.log &&
+grep found /log/dummy.log >> /log/gcc-test.log &&
 rm -v dummy.c a.out /log/dummy.log &&
 mkdir -pv /usr/share/gdb/auto-load/usr/lib &&
 mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib &&
 
-rm -rf /sources/gcc-10.2.0 &&
+cd $WORKDIR &&
+rm -rf /sources/gcc-11.1.0 &&
 ${log} `basename "$0"` " finished" basic 

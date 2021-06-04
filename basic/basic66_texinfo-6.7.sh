@@ -16,8 +16,8 @@ make &&
 ${log} `basename "$0"` " built" basic &&
 
 make check &&
-${log} `basename "$0"` " unexpected check succeed" basic
-${log} `basename "$0"` " expected check fail" basic
+${log} `basename "$0"` " check succeed" basic ||
+${log} `basename "$0"` " !!!check failed!!!" basic
 
 make install &&
 make TEXMF=/usr/share/texmf install-tex &&

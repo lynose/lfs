@@ -19,6 +19,8 @@ esac
 
 patch -Np1 -i ../glibc-2.33-fhs-1.patch &&
 
+sed 's/amx_/amx-/' -i sysdeps/x86/tst-cpu-features-supports.c &&
+
 mkdir -v build &&
 cd build &&
 
@@ -36,7 +38,10 @@ make &&
 ${log} `basename "$0"` " build" crosstools &&
 
 make DESTDIR=$LFS install &&
-$LFS/tools/libexec/gcc/$LFS_TGT/10.2.0/install-tools/mkheaders &&
+sed '/RTLDLIST=/s@/usr@@g' -i $LFS/usr/bin/ldd &&
+$LFS/tools/libexec/gcc/$LFS_TGT/11.1.0/install-tools/mkheaders &&
 ${log} `basename "$0"` " installed" crosstools &&
+
+cd $WORKDIR &&
 rm -rf $LFS/sources/glibc-2.33 &&
 ${log} `basename "$0"` " finished" crosstools

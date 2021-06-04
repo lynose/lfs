@@ -1,13 +1,13 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" crosstemp &&
 
-if [ -d $LFS/sources/gcc-10.2.0 ]
+if [ -d $LFS/sources/gcc-11.1.0 ]
  then
-  rm -rf $LFS/sources/gcc-10.2.0
+  rm -rf $LFS/sources/gcc-11.1.0
 fi
 
-tar xf $LFS/sources/gcc-10.2.0.tar.xz -C $LFS/sources/ &&
-cd $LFS/sources/gcc-10.2.0 &&
+tar xf $LFS/sources/gcc-11.1.0.tar.xz -C $LFS/sources/ &&
+cd $LFS/sources/gcc-11.1.0 &&
 tar xf ../mpfr-4.1.0.tar.xz &&
 mv -v mpfr-4.1.0 mpfr &&
 tar xf ../gmp-6.2.1.tar.xz &&
@@ -53,6 +53,7 @@ make DESTDIR=$LFS install &&
 ln -sv gcc $LFS/usr/bin/cc &&
 ${log} `basename "$0"` " installed" crosstemp &&
 
-rm -rf $LFS/sources/gcc-10.2.0 &&
+cd $WORKDIR &&
+rm -rf $LFS/sources/gcc-11.1.0 &&
 ${log} `basename "$0"` " finished" crosstemp
 

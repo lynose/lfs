@@ -2,12 +2,12 @@
 ${log} `basename "$0"` " started" roottools &&
 WORK=`pwd` &&
 
-if test -d /sources/Python-3.9.4
+if test -d /sources/Python-3.9.5
  then
-  rm -rf /sources/Python-3.9.4
+  rm -rf /sources/Python-3.9.5
 fi
-tar -xJf /sources/Python-3.9.4.tar.xz -C /sources/ &&
-cd /sources/Python-3.9.4 &&
+tar -xJf /sources/Python-3.9.5.tar.xz -C /sources/ &&
+cd /sources/Python-3.9.5 &&
 
 
 ./configure --prefix=/usr   \
@@ -22,5 +22,5 @@ make install &&
 ${log} `basename "$0"` " installed" roottools &&
 
 cd $WORK &&
-rm -rf /sources/Python-3.9.4 &&
+rm -rf /sources/Python-3.9.5 &&
 ${log} `basename "$0"` " finished" roottools

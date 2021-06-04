@@ -2,18 +2,13 @@
 ${log} `basename "$0"` " started" crosstools &&
 
 
-if [ -d $LFS/sources/gcc-10.2.0 ]
+if [ -d $LFS/sources/gcc-11.1.0 ]
  then
-    rm -rf $LFS/sources/gcc-10.2.0
+    rm -rf $LFS/sources/gcc-11.1.0
 fi
 
-tar xf $LFS/sources/gcc-10.2.0.tar.xz -C $LFS/sources/ &&
-cd $LFS/sources/gcc-10.2.0 &&
-
-if [ -d build ]
- then
-  rm -rf build
-fi
+tar xf $LFS/sources/gcc-11.1.0.tar.xz -C $LFS/sources/ &&
+cd $LFS/sources/gcc-11.1.0 &&
 
 mkdir -v build &&
 cd build &&
@@ -25,7 +20,7 @@ cd build &&
     --disable-multilib              \
     --disable-nls                   \
     --disable-libstdcxx-pch         \
-    --with-gxx-include-dir=/tools/$LFS_TGT/include/c++/10.2.0 &&
+    --with-gxx-include-dir=/tools/$LFS_TGT/include/c++/11.1.0 &&
     
 ${log} `basename "$0"` " configured" crosstools &&
 
@@ -35,5 +30,6 @@ ${log} `basename "$0"` " build" crosstools &&
 make DESTDIR=$LFS install &&
 ${log} `basename "$0"` " installed" crosstools &&
 
-rm -rf $LFS/sources/gcc-10.2.0 &&
+cd $WORKDIR &&
+rm -rf $LFS/sources/gcc-11.1.0 &&
 ${log} `basename "$0"` " finished" crosstools

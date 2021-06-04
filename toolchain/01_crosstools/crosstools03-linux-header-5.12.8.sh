@@ -1,12 +1,12 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" crosstools &&
 
-if [ -d $LFS/sources/linux-5.11.16 ]
+if [ -d $LFS/sources/linux-5.12.8 ]
  then
-  rm -rf $LFS/sources/linux-5.11.16
+  rm -rf $LFS/sources/linux-5.12.8
 fi
-tar xf $LFS/sources/linux-5.11.16.tar.xz -C $LFS/sources/ &&
-cd $LFS/sources/linux-5.11.16 &&
+tar xf $LFS/sources/linux-5.12.8.tar.xz -C $LFS/sources/ &&
+cd $LFS/sources/linux-5.12.8 &&
 
 make mrproper &&
 
@@ -19,6 +19,6 @@ cp -rv usr/include $LFS/usr &&
 ${log} `basename "$0"` " installed" crosstools &&
 
 cd $WORKDIR &&
-rm -rf $LFS/sources/linux-5.11.16 &&
+rm -rf $LFS/sources/linux-5.12.8 &&
 ${log} `basename "$0"` " finished" crosstools
 

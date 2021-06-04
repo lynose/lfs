@@ -18,13 +18,12 @@ ${log} `basename "$0"` " built" basic &&
 
 chown -Rv tester . &&
 su tester -c "PATH=$PATH make check" &&
-${log} `basename "$0"` " unexpected check succeed" basic
-${log} `basename "$0"` " expected check failed?" basic
+${log} `basename "$0"` " check succeed" basic ||
+${log} `basename "$0"` " !!!check failed!!!" basic
 
 make install &&
-mv -v /usr/bin/find /bin &&
-sed -i 's|find:=${BINDIR}|find:=/bin|' /usr/bin/updatedb &&
 ${log} `basename "$0"` " installed" basic &&
 
+cd $WORKDIR &&
 rm -rf /sources/findutils-4.8.0 &&
 ${log} `basename "$0"` " finished" basic 

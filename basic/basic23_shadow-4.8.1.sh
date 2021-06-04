@@ -14,6 +14,7 @@ find man -name Makefile.in -exec sed -i 's/passwd\.5 / /'   {} \; &&
 
 sed -e 's:#ENCRYPT_METHOD DES:ENCRYPT_METHOD SHA512:' \
     -e 's:/var/spool/mail:/var/mail:'                 \
+    -e '/PATH=/{s@/sbin:@@;s@/bin:@@}'                \
     -i etc/login.defs &&
        
 sed -i 's@DICTPATH.*@DICTPATH\t/lib/cracklib/pw_dict@' etc/login.defs &&
@@ -37,7 +38,8 @@ grpconv &&
 
 sed -i 's/yes/no/' /etc/default/useradd &&
 
-passwd root
+passwd root &&
 
+cd $WORKDIR && 
 rm -rf /sources/shadow-4.8.1 &&
 ${log} `basename "$0"` " finished" basic 

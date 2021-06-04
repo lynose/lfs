@@ -1,18 +1,16 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" basic &&
-if test -d /sources/kmod-28
+if test -d /sources/kmod-29
  then
-  rm -rf /sources/kmod-28
+  rm -rf /sources/kmod-29
 fi
 
-tar -xJf /sources/kmod-28.tar.xz -C /sources/ &&
+tar -xJf /sources/kmod-29.tar.xz -C /sources/ &&
 
-cd /sources/kmod-28 &&
+cd /sources/kmod-29 &&
 
 ./configure --prefix=/usr          \
-            --bindir=/bin          \
             --sysconfdir=/etc      \
-            --with-rootlibdir=/lib \
             --with-xz              \
             --with-zstd            \
             --with-zlib &&
@@ -29,6 +27,7 @@ done
 ln -sfv kmod /bin/lsmod &&
 ${log} `basename "$0"` " installed" basic &&
 
-rm -rf /sources/kmod-28 &&
+cd $WORKDIR &&
+rm -rf /sources/kmod-29 &&
 ${log} `basename "$0"` " finished" basic 
 

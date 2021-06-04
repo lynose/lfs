@@ -18,11 +18,9 @@ make check &&
 ${log} `basename "$0"` " checked" basic &&
 
 make install &&
-mv -v /usr/lib/libmagic.so.* /lib &&
-ln -sfv ../../lib/$(readlink /usr/lib/libmagic.so) /usr/lib/libmagic.so &&
 ${log} `basename "$0"` " installed" basic &&
 
-
+cd $WORKDIR &&
 rm -rf /sources/file-5.40 &&
 ${log} `basename "$0"` " finished" basic 
 
