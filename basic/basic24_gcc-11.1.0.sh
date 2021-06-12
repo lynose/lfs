@@ -41,7 +41,7 @@ make install &&
 rm -rf /usr/lib/gcc/$(gcc -dumpmachine)/11.1.0/include-fixed/bits/ &&
 chown -v -R root:root \
     /usr/lib/gcc/*linux-gnu/11.1.0/include{,-fixed} &&
-ln -sv ../usr/bin/cpp /lib &&
+ln -svr /usr/bin/cpp /usr/lib &&
 
 ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/11.1.0/liblto_plugin.so \
         /usr/lib/bfd-plugins/ &&

@@ -18,7 +18,7 @@ ${log} `basename "$0"` " configured" basic &&
 make &&
 ${log} `basename "$0"` " built" basic &&
 
-make install &&
+make SBINDIR=/usr/sbin install &&
 mkdir -v              /usr/share/doc/iproute2-5.12.0 &&
 cp -v COPYING README* /usr/share/doc/iproute2-5.12.0 &&
 ${log} `basename "$0"` " installed" basic &&
