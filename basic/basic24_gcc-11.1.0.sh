@@ -35,7 +35,7 @@ chown -Rv tester . &&
 su tester -c "PATH=$PATH make -k check" &&
 ${log} `basename "$0"` " Unexpected succeeded" basic
 
-../gcc-11.1.0/contrib/test_summary > /log/gcc.log &&
+../contrib/test_summary > /log/gcc.log &&
 
 make install &&
 rm -rf /usr/lib/gcc/$(gcc -dumpmachine)/11.1.0/include-fixed/bits/ &&

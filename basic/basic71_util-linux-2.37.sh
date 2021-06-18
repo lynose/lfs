@@ -1,18 +1,19 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" basic &&
-if test -d /sources/util-linux-2.36.2
+if test -d /sources/util-linux-2.37
  then
-  rm -rf /sources/util-linux-2.36.2
+  rm -rf /sources/util-linux-2.37
 fi
 
-tar xf /sources/util-linux-2.36.2.tar.xz -C /sources/ &&
+tar xf /sources/util-linux-2.37.tar.xz -C /sources/ &&
 
-cd /sources/util-linux-2.36.2 &&
+cd /sources/util-linux-2.37 &&
 
 mkdir -pv /var/lib/hwclock &&
 
 ./configure ADJTIME_PATH=/var/lib/hwclock/adjtime   \
-            --docdir=/usr/share/doc/util-linux-2.36.2 \
+            --libdir=/usr/lib    \
+            --docdir=/usr/share/doc/util-linux-2.37 \
             --disable-chfn-chsh  \
             --disable-login      \
             --disable-nologin    \
@@ -35,8 +36,9 @@ ${log} `basename "$0"` " !!!check failed!!!" basic
 
 
 make install &&
+tar -xf /sources/util-linux-man-pages-2.37.tar.xz --directory /usr/share/man --strip-components=1
 ${log} `basename "$0"` " installed" basic &&
 
 cd $WORKDIR &&
-rm -rf /sources/util-linux-2.36.2 &&
+rm -rf /sources/util-linux-2.37 &&
 ${log} `basename "$0"` " finished" basic 

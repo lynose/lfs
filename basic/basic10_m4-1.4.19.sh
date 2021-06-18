@@ -1,14 +1,14 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" basic &&
 
-if test -d /sources/m4-1.4.18
+if test -d /sources/m4-1.4.19
  then
-  rm -rf /sources/m4-1.4.18
+  rm -rf /sources/m4-1.4.19
 fi
 
-tar xf /sources/m4-1.4.18.tar.xz -C /sources/ &&
+tar xf /sources/m4-1.4.19.tar.xz -C /sources/ &&
 
-cd /sources/m4-1.4.18 &&
+cd /sources/m4-1.4.19 &&
 
 sed -i 's/IO_ftrylockfile/IO_EOF_SEEN/' lib/*.c &&
 echo "#define _IO_IN_BACKUP 0x100" >> lib/stdio-impl.h &&
@@ -24,5 +24,6 @@ ${log} `basename "$0"` " checked" basic &&
 make install &&
 ${log} `basename "$0"` " installed" basic &&
 
-rm -rf /sources/m4-1.4.18 &&
+cd $WORKDIR &&
+rm -rf /sources/m4-1.4.19 &&
 ${log} `basename "$0"` " finished" basic 

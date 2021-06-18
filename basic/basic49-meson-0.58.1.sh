@@ -1,13 +1,13 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" basic &&
-if test -d /sources/meson-0.58.0
+if test -d /sources/meson-0.58.1
  then
-  rm -rf /sources/meson-0.58.0
+  rm -rf /sources/meson-0.58.1
 fi
 
-tar xf /sources/meson-0.58.0.tar.gz -C /sources/ &&
+tar xf /sources/meson-0.58.1.tar.gz -C /sources/ &&
 
-cd /sources/meson-0.58.0 &&
+cd /sources/meson-0.58.1 &&
 
 python3 setup.py build &&
 ${log} `basename "$0"` " built" basic &&
@@ -19,6 +19,6 @@ install -vDm644 data/shell-completions/zsh/_meson /usr/share/zsh/site-functions/
 ${log} `basename "$0"` " installed" basic &&
 
 cd $WORKDIR &&
-rm -rf /sources/meson-0.58.0 &&
+rm -rf /sources/meson-0.58.1 &&
 ${log} `basename "$0"` " finished" basic 
 

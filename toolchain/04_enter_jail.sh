@@ -12,6 +12,6 @@ chroot "$LFS" /usr/bin/env -i \
     TERM="$TERM"                \
     PS1='\u:\w\$ ' \
     PATH=/bin:/usr/bin:/sbin:/usr/sbin \
-    MAKEFLAGS='-j 16' \
+    MAKEFLAGS='-j 2' \
     log=/sh/log/logger.sh \
     /bin/bash --login +h
