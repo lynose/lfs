@@ -10,6 +10,8 @@ tar xf /sources/libcap-2.50.tar.xz -C /sources &&
 
 cd /sources/libcap-2.50 &&
 
+
+sed -i 's/ $(PROGS)/& capsh/' progs/Makefile &&
 sed -i '/install -m.*STA/d' libcap/Makefile &&
 ${log} `basename "$0"` " configured" basic &&
 
@@ -17,7 +19,7 @@ make prefix=/usr lib=lib &&
 ${log} `basename "$0"` " built" basic &&
 
 make test &&
-${log} `basename "$0"` " tested" basic
+${log} `basename "$0"` " tested" basic &&
     
 make prefix=/usr lib=lib install &&
 chmod -v 755 /usr/lib/lib{cap,psx}.so.2.50 &&
