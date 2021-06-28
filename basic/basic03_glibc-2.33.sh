@@ -23,7 +23,7 @@ cd build &&
              --enable-kernel=3.2                      \
              --enable-stack-protector=strong          \
              --with-headers=/usr/include              \
-             libc_cv_slibdir=/lib &&
+             libc_cv_slibdir=/usr/lib &&
 ${log} `basename "$0"` " configured" basic &&
 
 make &&
@@ -36,13 +36,14 @@ ${log} `basename "$0"` " expected test fail?" basic
 touch /etc/ld.so.conf &&
 sed '/test-installation/s@$(PERL)@echo not running@' -i ../Makefile &&
 make install &&
+sed '/RTLDLIST=/s@/usr@@g' -i /usr/bin/ldd &&
 ${log} `basename "$0"` " installed base" basic &&
 
 cp -v ../nscd/nscd.conf /etc/nscd.conf &&
 mkdir -pv /var/cache/nscd &&
 
 install -v -Dm644 ../nscd/nscd.tmpfiles /usr/lib/tmpfiles.d/nscd.conf &&
-install -v -Dm644 ../nscd/nscd.service /lib/systemd/system/nscd.service &&
+install -v -Dm644 ../nscd/nscd.service /usr/lib/systemd/system/nscd.service &&
 
 mkdir -pv /usr/lib/locale &&
 localedef -i POSIX -f UTF-8 C.UTF-8 2> /dev/null || true &&

@@ -6,7 +6,7 @@ ${log} `basename "$0"` " ======================================" basic &&
 ${log} `basename "$0"`  "Started Basic System build" basic &&
 ${log} `basename "$0"` " ======================================" basic &&
 
-./basic01_man-pages-5.11.sh &&
+./basic01_man-pages-5.12.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic02_iana-etc-20210611.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
@@ -34,7 +34,7 @@ ${log} `basename "$0"` " ======================================" basic &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic14_expect-5.45.4.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic15_dejagnu-1.6.2.sh &&
+./basic15_dejagnu-1.6.3.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic16_binutils-2.36.1.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
@@ -48,7 +48,7 @@ ${log} `basename "$0"` " ======================================" basic &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic21_acl-2.3.1.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic22_libcap-2.50.sh &&
+./basic22_libcap-2.51.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic23_shadow-4.8.1.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
@@ -68,6 +68,6 @@ ${log} `basename "$0"` " ======================================" basic &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic31_grep-3.6.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic32_bash-5.1.sh
+./basic32_bash-5.1.8.sh
 
 echo "If you see this before logout, execute: exec /bin/bash --login +h"

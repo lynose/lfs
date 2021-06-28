@@ -1,17 +1,18 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" roottools &&
 WORK=`pwd` &&
-if test -d /sources/util-linux-2.36.2
+if test -d /sources/util-linux-2.37
  then
-  rm -rf /sources/util-linux-2.36.2
+  rm -rf /sources/util-linux-2.37
 fi
-tar -xJf /sources/util-linux-2.36.2.tar.xz -C /sources/ &&
-cd /sources/util-linux-2.36.2 &&
+tar -xJf /sources/util-linux-2.37.tar.xz -C /sources/ &&
+cd /sources/util-linux-2.37 &&
 
 mkdir -pv /var/lib/hwclock &&
 
 ./configure ADJTIME_PATH=/var/lib/hwclock/adjtime    \
-            --docdir=/usr/share/doc/util-linux-2.36.2 \
+            --libdir=/usr/lib    \
+            --docdir=/usr/share/doc/util-linux-2.37 \
             --disable-chfn-chsh  \
             --disable-login      \
             --disable-nologin    \
@@ -31,5 +32,5 @@ make install &&
 ${log} `basename "$0"` " installed" roottools &&
 
 cd $WORK &&
-rm -rf /sources/util-linux-2.36.2 &&
+rm -rf /sources/util-linux-2.37 &&
 ${log} `basename "$0"` " finished" roottools

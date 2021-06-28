@@ -2,12 +2,12 @@ ${log} `basename "$0"` " ======================================" crosstemp &&
 ${log} `basename "$0"`  "Started CrossTemp build in $LFS" crosstemp &&
 ${log} `basename "$0"` " ======================================" crosstemp &&
 export WORKDIR=$(pwd) &&
-${log} `basename "$0"` " ======================================" crosstools &&
-./crosstemp01-m4-1.4.18.sh &&
+${log} `basename "$0"` " ======================================" crosstemp &&
+./crosstemp01-m4-1.4.19.sh &&
 ${log} `basename "$0"` " ======================================" crosstemp &&
 ./crosstemp02-ncurses-6.2.sh &&
 ${log} `basename "$0"` " ======================================" crosstemp &&
-./crosstemp03-bash-5.1.sh &&
+./crosstemp03-bash-5.1.8.sh &&
 ${log} `basename "$0"` " ======================================" crosstemp &&
 ./crosstemp04-coreutils-8.32.sh &&
 ${log} `basename "$0"` " ======================================" crosstemp &&

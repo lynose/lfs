@@ -20,11 +20,6 @@ ${log} `basename "$0"` " configured" basic &&
 make &&
 ${log} `basename "$0"` " built" basic &&
 
-make test &&
-${log} `basename "$0"` " check succeed" basic ||
-${log} `basename "$0"` " !!! check failed? !!!" basic
-
-
 make install &&
 
 install -v -dm755 /usr/share/doc/python-3.9.5/html &&

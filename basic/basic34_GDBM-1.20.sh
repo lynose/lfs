@@ -1,13 +1,13 @@
 #!/bin/bash
 ${log} `basename "$0"` " started" basic &&
-if test -d /sources/gdbm-1.19
+if test -d /sources/gdbm-1.20
  then
-  rm -rf /sources/gdbm-1.19
+  rm -rf /sources/gdbm-1.20
 fi
 
-tar xf /sources/gdbm-1.19.tar.gz -C /sources/ &&
+tar xf /sources/gdbm-1.20.tar.gz -C /sources/ &&
 
-cd /sources/gdbm-1.19 &&
+cd /sources/gdbm-1.20 &&
 
 ./configure --prefix=/usr    \
             --disable-static \
@@ -24,5 +24,5 @@ ${log} `basename "$0"` " checked" basic
 make install &&
 ${log} `basename "$0"` " installed" basic &&
 
-rm -rf /sources/gdbm-1.19 &&
+rm -rf /sources/gdbm-1.20 &&
 ${log} `basename "$0"` " finished" basic 

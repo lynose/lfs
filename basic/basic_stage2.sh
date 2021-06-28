@@ -5,7 +5,7 @@ export WORKDIR=$(pwd)
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic33_libtool-2.4.6.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
-./basic34_GDBM-1.19.sh &&
+./basic34_GDBM-1.20.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
 ./basic35_gperf-3.1.sh &&
 ${log} `basename "$0"` " ======================================" basic &&
